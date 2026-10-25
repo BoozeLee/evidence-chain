@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Evidence Chain 特别版</title>
+<meta name="description" content="弗里德里希·默茨、贝莱德与疫苗资金：文件证明了什么、没有证明什么，以及每一个缺失的环节。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evidence Chain 特别版">
+<meta property="og:description" content="弗里德里希·默茨、贝莱德与疫苗资金：文件证明了什么、没有证明什么，以及每一个缺失的环节。">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="./"><link rel="alternate" hreflang="de" href="de.html"><link rel="alternate" hreflang="nl" href="nl.html"><link rel="alternate" hreflang="zh" href="zh.html">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: a single 66ch reading column on photocopy-grey paper; chapter openers break out wide; evidence-tape yellow is the one loud element. */
+:root{
+  --paper:#E8EAE5; --paper-2:#DCDFD8; --ink:#15171A; --muted:#565C58; --rule:#C3C7BF;
+  --tape:#F2C200; --tape-ink:#15171A; --stamp:#B0261D;
+  --gA:#2E6A39; --gB:#2A5C88; --gC:#8C6200; --gD:#A3271F; --gE:#6A5A7B;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.18rem;line-height:1.62;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
+a{color:inherit;text-decoration-color:var(--tape);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--tape);outline-offset:2px}
+.col{max-width:66ch;margin-inline:auto}
+.wide{max-width:1080px;margin-inline:auto}
+p{margin:0 0 1.05em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:.95;margin:0;font-weight:900;text-transform:uppercase}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-block:1.4rem .6rem}
+.mast .name{font-family:var(--display);font-weight:900;font-size:1.6rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* cover */
+.cover{padding-block:2.2rem 1rem}
+.cover .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.cover h1{font-size:clamp(3rem,10vw,7.4rem);letter-spacing:-.01em}
+.cover h1 em{font-style:normal;background:var(--tape);color:var(--tape-ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.cover .dek{font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.4;max-width:46ch;margin-top:1.4rem}
+.byline{margin-top:1.2rem}
+
+.tape{background:var(--tape);color:var(--tape-ink);font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.18em;
+  font-size:clamp(.95rem,2.2vw,1.25rem);white-space:nowrap;overflow:hidden;padding:.45rem 0;transform:rotate(-1.6deg);margin:2.2rem calc(-1 * max(16px,env(safe-area-inset-left,0px))) 2.4rem;
+  border-block:3px solid var(--tape-ink)}
+.tape span{display:inline-block;padding-left:1rem;animation:crawl 60s linear infinite}
+@keyframes crawl{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape span{animation:none}}
+
+/* chain figure */
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:.6rem;margin:1rem 0 .4rem}
+.link{flex:1 1 150px;min-width:0;border:3px solid var(--ink);border-radius:999px;padding:.8rem 1.1rem;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.15rem}
+.link b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.05;letter-spacing:.02em}
+.link small{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.link.gap{border-style:dashed;border-color:var(--stamp);color:var(--stamp)}
+.link.gap small{color:var(--stamp)}
+.figcap{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.5;margin-top:.5rem}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:1px solid var(--rule);margin-block:2rem 3rem}
+.toc a{display:grid;grid-template-columns:2.6rem 1fr;gap:.4rem;padding:.8rem .4rem;border-bottom:1px solid var(--rule);text-decoration:none}
+.toc a:hover{background:var(--paper-2)}
+.toc .n{font-family:var(--display);font-weight:900;font-size:1.6rem;line-height:1}
+.toc .t{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.1}
+
+/* chapter openers */
+.chapter{margin-top:4.5rem;scroll-margin-top:1rem}
+.opener{display:grid;grid-template-columns:auto 1fr;gap:0 1.2rem;align-items:end;border-top:3px solid var(--ink);padding-top:1rem;margin-bottom:1.8rem}
+.opener .num{font-family:var(--display);font-weight:900;font-size:clamp(4.5rem,13vw,8rem);line-height:.8;color:var(--tape);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+.opener h2{font-size:clamp(2.2rem,6vw,4rem)}
+.opener .label{grid-column:1/-1;margin-top:.8rem}
+
+h3{font-size:1.6rem;margin:2.2rem 0 .7rem}
+.drop::first-letter{font-family:var(--display);font-weight:900;float:left;font-size:4.6em;line-height:.78;padding:.06em .08em 0 0}
+
+blockquote.pull{margin:2rem 0;padding:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.02;border:none}
+blockquote.pull::before{content:"";display:block;width:3.5rem;height:.45rem;background:var(--tape);margin-bottom:.7rem}
+
+/* evidence chips */
+.ev{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;border:1.5px solid currentColor;border-radius:3px;padding:.05em .38em;vertical-align:.12em}
+.ev.A{color:var(--gA)}.ev.B{color:var(--gB)}.ev.C{color:var(--gC)}.ev.D{color:var(--gD)}.ev.E{color:var(--gE)}
+
+/* proves / doesn't */
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink);margin:1.8rem 0;font-size:1rem;line-height:1.5}
+.verdict>div{padding:1rem 1.1rem;min-width:0}
+.verdict>div+div{border-left:2px solid var(--ink);background:var(--paper-2)}
+.verdict h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem}
+.verdict .yes h4{color:var(--gA)} .verdict .no h4{color:var(--stamp)}
+.verdict ul{margin:0;padding-left:1.1rem}
+.verdict li+li{margin-top:.35rem}
+@media (max-width:600px){.verdict{grid-template-columns:1fr}.verdict>div+div{border-left:none;border-top:2px solid var(--ink)}}
+
+/* gap line at chapter end */
+.gapline{font-family:var(--mono);font-size:.8rem;line-height:1.55;border-left:6px solid var(--stamp);padding:.6rem 0 .6rem 1rem;margin-top:2rem}
+.gapline b{color:var(--stamp);letter-spacing:.1em}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:1.4rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.4;min-width:560px}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.6rem .6rem;border-bottom:1px solid var(--rule)}
+td{padding:.6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+
+/* timeline */
+.timeline{list-style:none;margin:1.6rem 0;padding:0;border-left:3px solid var(--ink)}
+.timeline li{position:relative;padding:0 0 1.1rem 1.3rem;font-size:1rem;line-height:1.45}
+.timeline li::before{content:"";position:absolute;left:-9px;top:.35rem;width:15px;height:15px;background:var(--paper);border:3px solid var(--ink);border-radius:50%}
+.timeline li.merz::before{background:var(--tape)}
+.timeline time{display:block;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+
+/* five-link ladder */
+.ladder{counter-reset:step;display:grid;gap:.5rem;margin:1.6rem 0;padding:0;list-style:none}
+.ladder li{counter-increment:step;display:grid;grid-template-columns:2.6rem 1fr auto;gap:.8rem;align-items:center;border:2px solid var(--ink);padding:.7rem .9rem;font-size:1rem;line-height:1.35}
+.ladder li::before{content:counter(step);font-family:var(--display);font-weight:900;font-size:1.8rem;line-height:1}
+.stamp{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--stamp);border:2px solid var(--stamp);padding:.15rem .45rem;transform:rotate(-4deg);white-space:nowrap}
+.stamp.ok{color:var(--gA);border-color:var(--gA)}
+@media (max-width:480px){.ladder li{grid-template-columns:2rem 1fr}.ladder .stamp{grid-column:2;justify-self:start}}
+
+/* protocol strip */
+.protocol{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.4rem 0}
+.protocol span{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1rem;letter-spacing:.04em;border:2px solid var(--ink);padding:.35rem .7rem}
+.protocol span:not(:last-child)::after{content:" →";color:var(--muted)}
+
+/* scale */
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin:1.6rem 0}
+.scale div{border-top:8px solid currentColor;padding-top:.5rem;font-size:.92rem;line-height:1.35;min-width:0}
+.scale b{display:block;font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:1}
+.scale span{color:var(--ink)}
+@media (max-width:640px){.scale{grid-template-columns:1fr}.scale div{display:grid;grid-template-columns:2.6rem 1fr;gap:.6rem;align-items:start}}
+
+.box{background:var(--paper-2);border:2px solid var(--ink);padding:1.1rem 1.2rem;margin:1.8rem 0;font-size:1rem;line-height:1.55}
+.box .label{display:block;margin-bottom:.5rem}
+.box pre{white-space:pre-wrap;font-family:var(--mono);font-size:.85rem;margin:.4rem 0 0}
+
+/* art desk */
+.plates{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.4rem}
+.plate{border:2px solid var(--ink);padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.plate h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.15rem;margin:0}
+.plate p{font-family:var(--mono);font-size:.76rem;line-height:1.55;margin:0;flex:1}
+.plate button{align-self:flex-start;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--tape);color:var(--tape-ink);border:2px solid var(--tape-ink);padding:.35rem .7rem;cursor:pointer}
+
+.sources{font-size:.9rem;line-height:1.5}
+.sources li{margin-bottom:.45rem;overflow-wrap:anywhere}
+footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
+
+/* language switcher */
+.lang{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:flex-end;padding-top:.7rem}
+.lang a{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-decoration:none;border:2px solid var(--ink);padding:.25rem .55rem;min-width:2.6rem;text-align:center}
+.lang a:hover{background:var(--paper-2)}
+.lang a[aria-current="page"]{background:var(--tape);color:var(--tape-ink);border-color:var(--tape-ink)}
+/* Chinese */
+:root:lang(zh){--display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--body:"Noto Serif SC","Songti SC","SimSun",serif}
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3,:lang(zh) .link b,:lang(zh) .toc .t,:lang(zh) blockquote.pull,:lang(zh) .stamp,:lang(zh) .protocol span{letter-spacing:0;line-height:1.2}
+:lang(zh) .cover h1{font-size:clamp(2.4rem,7.5vw,5.6rem)}
+:lang(zh) .opener h2{font-size:clamp(1.8rem,5vw,3.2rem)}
+:lang(zh) blockquote.pull{font-size:clamp(1.3rem,3.4vw,1.9rem)}
+:lang(zh) .drop::first-letter{float:none;font-size:inherit;line-height:inherit;padding:0;font-family:inherit;font-weight:inherit}
+:lang(zh) body{line-height:1.85}
+
+</style>
+</head>
+<body>
+<div class="wide">
+  <header class="mast">
+    <span class="name">Evidence Chain</span>
+    <span class="label">特别版 · 第 1 期 · 2026 年 10 月</span>
+  </header>
+  <nav class="lang" aria-label="Language / Sprache / Taal / 语言"><a href="./" hreflang="en" lang="en">EN</a><a href="de.html" hreflang="de" lang="de">DE</a><a href="nl.html" hreflang="nl" lang="nl">NL</a><a href="zh.html" hreflang="zh" lang="zh" aria-current="page">中文</a></nav>
+
+  <section class="cover">
+    <div class="kicker">一期法证式特别版</div>
+    <h1>跟着钱走。<em>纸面证据停在哪里，就停在哪里。</em></h1>
+    <p class="dek">弗里德里希·默茨、贝莱德、疫苗资金，以及"人体在暗中被改造"的说法。文件证明了什么、没有证明什么，以及为什么这道缺口才是真正的新闻。</p>
+    <p class="label byline">基于 Project Evidence Chain 调查档案 · 每项说法均按 A 至 E 评级</p>
+  </section>
+</div>
+
+<div class="tape" aria-hidden="true"><span>证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕ 证据链不完整 ✕ 无文件不得越线 ✕</span></div>
+
+<div class="wide">
+  <figure style="margin:0">
+    <div class="chain" role="img" aria-label="五环证据链。默茨担任贝莱德德国监事会主席（有据可查）。他会见了部长（有据可查）。与任何医药决策的联系缺失。辉瑞和 BioNTech 资助了疫苗（有据可查）。与任何被改造之人的联系缺失。">
+      <div class="link"><b>默茨任贝莱德德国监事会主席</b><small>M-01 · A</small></div>
+      <div class="link"><b>会见部长</b><small>EC-09 · A</small></div>
+      <div class="link gap"><b>？医药决策</b><small>M-06 · C · 无文件</small></div>
+      <div class="link"><b>辉瑞 + BioNTech 出资研发疫苗</b><small>F-01 · A</small></div>
+      <div class="link gap"><b>？被改造的人</b><small>B-01 · C · 无样本</small></div>
+    </div>
+    <figcaption class="figcap">整个故事浓缩在一行里。实线环节背后有原始文件，虚线环节背后目前什么都没有。证据编号对应附录中的登记表。</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="目录">
+    <a href="#rules"><span class="n">00</span><span class="t">本刊规则</span></a>
+    <a href="#chair"><span class="n">01</span><span class="t">监事会主席之位</span></a>
+    <a href="#money"><span class="n">02</span><span class="t">真实存在的钱</span></a>
+    <a href="#thirteenf"><span class="n">03</span><span class="t">13F 幻象</span></a>
+    <a href="#access"><span class="n">04</span><span class="t">接触不等于俘获</span></a>
+    <a href="#rumor"><span class="n">05</span><span class="t">最丑陋的谣言</span></a>
+    <a href="#biology"><span class="n">06</span><span class="t">生物学指控</span></a>
+    <a href="#archive"><span class="n">07</span><span class="t">真实暴行档案</span></a>
+    <a href="#proof"><span class="n">08</span><span class="t">什么才能真正证明</span></a>
+    <a href="#verdict"><span class="n">09</span><span class="t">证据链不完整</span></a>
+    <a href="#register"><span class="n">A</span><span class="t">证据登记表</span></a>
+    <a href="#sources"><span class="n">B</span><span class="t">资料来源</span></a>
+  </nav>
+</div>
+
+<main class="col">
+
+<section class="chapter" id="rules">
+  <div class="opener"><span class="num">00</span><h2>本刊规则</h2><span class="label">编者按</span></div>
+
+  <p class="drop">在任何人对阴谋论兴奋到忘乎所以之前，先把话说清楚。本刊同样痛恨两样东西。第一，把文件藏起来的权力。第二，网上那些懒得要死的家伙：在两个名人之间画一条红线，配一个骷髅表情，就管这叫新闻。</p>
+
+  <p>这两者是同一种病。都把感觉当成事实。有权势的机构说"相信我们"，想让你别再问。卖关系网图的人说"这还不明显吗"，想让你别再查。这两样我们都不干。</p>
+
+  <p>所以规矩是这样的。本期的每一项说法都带有一个评级，取自本刊所依据的 Project Evidence Chain 调查档案。背后有原始文件，你会看到。没有，你也会看到，用红字写在每一章的结尾。我们绝不会因为标题更好看，就把 C 级抬成 A 级。</p>
+
+  <div class="scale" aria-label="证据评级">
+    <div style="color:var(--gA)"><b>A</b><span>有据可查。原始来源或有力的独立佐证。可以作为事实陈述。</span></div>
+    <div style="color:var(--gB)"><b>B</b><span>合理但未证实。机制可能存在，决定性证据缺失。</span></div>
+    <div style="color:var(--gC)"><b>C</b><span>推测。可能的解释，但证据不足。绝不作为指控发表。</span></div>
+    <div style="color:var(--gD)"><b>D</b><span>被反驳。现有的有力证据与之相反。</span></div>
+    <div style="color:var(--gE)"><b>E</b><span>虚构或象征。有文化意义，但不能证明任何实际发生的事。</span></div>
+  </div>
+
+  <p>评级之上还有一条规则：<strong>关联不是因果，时间巧合不是证明，象征不是证据。</strong>两个人在同一栋楼里，不等于他们在同一个阴谋里。日期对得上只是巧合，除非有文件说明不是。</p>
+
+  <blockquote class="pull">我们不会编造缺失的那一环。我们会指着那个洞，准确告诉你什么能把它填上。</blockquote>
+
+  <p>这不是胆怯。这是让真实发现无懈可击的唯一办法。这个故事中有据可查的部分本身就够难看了：一个受雇为全球最大资产管理公司开门的人，走进了许多政府的大门，而这套制度的设计让任何人都不必记录谈了什么。如果用垃圾去吹大它，就等于白送柏林每个公关部门一个把一切都轻轻揭过的借口。</p>
+</section>
+
+<section class="chapter" id="chair">
+  <div class="opener"><span class="num">01</span><h2>监事会主席之位</h2><span class="label">默茨在贝莱德究竟做了什么，2016 至 2020 年</span></div>
+
+  <p class="drop">2016 年 3 月，曾被默克尔挤出政坛一线的前基民盟议会党团主席弗里德里希·默茨找到了新工作。贝莱德，这家管理资产比大多数国家 GDP 还多的资管巨头，任命他为其德国法律实体 <em>BlackRock Asset Management Deutschland AG</em> 的监事会主席。<span class="ev A">M-01 · A</span></p>
+
+  <p>到这里还只是乏味的公司事实。有意思的是公告的后半段。贝莱德表示，默茨还将承担更广泛的顾问角色，负责与重要客户、监管机构和德国政府部门建立关系。<span class="ev A">M-02 · A</span>《经理人杂志》（Manager Magazin）读完后，直接点明了他显然被雇来干的事：说客。"说客"不是他的法定头衔。但当一家公司说，一位前政坛高层的工作是经营与监管者和政府的关系时，你不需要法学学位也能听懂。</p>
+
+  <p>这个人在 2018 年竞选基民盟主席期间说，自己年收入约一百万欧元，并在同一次采访中表示自己属于"中上阶层"。这足以说明，他对头衔和实际工作之间的差距有多么心安理得。</p>
+
+  <h3>主席之位是什么，不是什么</h3>
+
+  <p>现在说网上总是跳过的部分。德国股份公司（Aktiengesellschaft）实行双层结构。董事会经营公司，监事会监督董事会。监事会主席不下单交易、不管理投资组合、也不为基金挑选股票。贝莱德在同一份公告中说，首席运营官 Harald Klug 负责日常业务。<span class="ev D">M-03 · D</span></p>
+
+  <p>所以每一个说"默茨是贝莱德 CEO"的表情包都是错的。他既不是贝莱德公司（BlackRock Inc.）的 CEO，也不是贝莱德德国的 CEO。<span class="ev D">M-04 · D</span>重复这句话不会让你成为真相斗士，只会让你成为屋里最容易被驳倒的人。</p>
+
+  <p>而这个角色也不是挂名。当时的报道显示他出席客户活动，包括与英国前财政大臣乔治·奥斯本一起的脱欧简报会，并参加了达沃斯期间的贝莱德代表团。<span class="ev A">M-05 · A</span>他确实干了这份工作。这份工作就是"门路"。</p>
+
+  <p>2018 年他竞选基民盟主席期间（最终输给了克兰普-卡伦鲍尔），仍留在监事会，直到 2020 年 3 月底才卸任德国主席一职。记住这个日期。有人会试图让它承担很大的分量。</p>
+
+  <div class="verdict">
+    <div class="yes"><h4>这证明了</h4><ul><li>默茨于 2016 年 3 月至 2020 年 3 月担任贝莱德德国实体的监事会主席。</li><li>他的职责明确包括与客户、监管者和政府的关系。</li><li>他积极参与客户与人脉活动。</li></ul></div>
+    <div class="no"><h4>这没有证明</h4><ul><li>他经营过贝莱德，无论在德国还是其他地方。</li><li>他挑选过任何投资，无论是医药还是其他领域。</li><li>他的关系改变过任何政府决策。</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>剩余缺口：</b>尚未取得 2016–2020 年经认证的商业登记摘录、公司章程或监事会会议记录。他的职务有当时来源的有力佐证，但其确切的法定权限仍未还原。</p>
+</section>
+
+<section class="chapter" id="money">
+  <div class="opener"><span class="num">02</span><h2>真实存在的钱</h2><span class="label">疫苗资金究竟从哪里来</span></div>
+
+  <p class="drop">想知道是谁为辉瑞-BioNTech 疫苗买单，你不需要吹哨人。你需要一份新闻稿、一张银行流水，再加一点耐心。资金链是公开的，而且它不经过贝莱德。</p>
+
+  <ol class="timeline">
+    <li class="merz"><time>2016 年 3 月</time>默茨出任 BlackRock Asset Management Deutschland AG 监事会主席。</li>
+    <li class="merz"><time>2017 年 10 月 17 日 – 2018 年 9 月 12 日</time>据报道，他以贝莱德身份与联邦高层官员会面四次（见第 04 章）。</li>
+    <li><time>2020 年 3 月 17 日</time>辉瑞与 BioNTech 宣布新冠疫苗合作。</li>
+    <li class="merz"><time>2020 年 3 月底</time>默茨卸任贝莱德德国主席。</li>
+    <li><time>2020 年 4 月 9 日</time>辉瑞公布财务条款。</li>
+    <li><time>2020 年 4 月</time>德国保罗·埃尔利希研究所（PEI）批准 BioNTech 在德国的首个试验。其常见问题页写的是 4 月 20 日，公告日期为 4 月 22 日。</li>
+    <li><time>2020 年 6 月 11 日</time>欧洲投资银行与 BioNTech 签署最高 1 亿欧元的债务融资协议。</li>
+    <li><time>2020 年 7 月</time>大型 2/3 期试验启动。</li>
+    <li><time>2020 年 9 月</time>德国联邦政府向 BioNTech 提供最高约 3.75 亿欧元支持。</li>
+    <li><time>2020 年 12 月 21 日</time>欧洲药品管理局建议有条件批准 Comirnaty 上市。</li>
+    <li class="merz"><time>2025 年 5 月 6 日</time>默茨出任联邦总理。</li>
+  </ol>
+  <p class="figcap">黄点是与默茨相关的事件。可以看到两条线几乎没有交集：只在 2020 年 3 月重叠了大约两周。</p>
+
+  <h3>辉瑞给 BioNTech</h3>
+  <p>2020 年 4 月 9 日，辉瑞宣布向 BioNTech 预付 1.85 亿美元，其中约 1.13 亿美元为股权投资，另有最高 5.63 亿美元的潜在里程碑付款。开发成本最终五五分摊，但开发期间由辉瑞先垫付 100%，BioNTech 之后偿还其一半。<span class="ev A">F-01 · F-02 · F-03 · A</span>这直接出自辉瑞当时自己的新闻稿。</p>
+
+  <h3>布鲁塞尔给 BioNTech</h3>
+  <p>2020 年 6 月 11 日，欧洲投资银行签署协议，为 BNT162 项目和产能扩张提供最高 1 亿欧元债务融资，分两笔各 5000 万欧元，与里程碑挂钩。<span class="ev A">F-04 · A</span>这是一家欧洲公共银行，记录在其官网上。</p>
+
+  <h3>柏林给 BioNTech</h3>
+  <p>2020 年 9 月，德国政府承诺提供最高约 3.75 亿欧元。此事被广泛报道，但档案未取得联邦教研部（BMBF）的原始资助决定，所以在有人调出真正文件之前，它维持 B 级。<span class="ev B">F-05 · B*</span></p>
+
+  <h3>其余的由公众买单</h3>
+  <p>把视野拉远，"华尔街造出了疫苗"那一派的说法就更站不住了。2023 年《英国医学杂志》（BMJ）的一项研究发现，美国对 mRNA 新冠疫苗的公共投资至少达 319 亿美元。《美国医学会杂志·网络开放版》的一项研究发现，2020–2021 年启动的已注册新冠 1–3 期试验中，大多数由公共资金资助，超过产业界。疫情之前，BioNTech 的最大股东是施特吕格曼兄弟的家族办公室，而不是指数基金。</p>
+
+  <blockquote class="pull">疫苗是用公司的钱和一大笔公共资金造出来的。资产管理公司手里只有演唱会门票，音乐不是它写的。</blockquote>
+
+  <p>试验本身有发起方，写在美国食品药品监督管理局（FDA）的文件里：辉瑞和 BioNTech。FDA 2020 年 12 月的咨询委员会简报描述了一项约 44,000 人参与的随机、安慰剂对照 2/3 期研究。贝莱德没有出现在任何发起方或方案文件中。<span class="ev A">T-01 · A</span> <span class="ev C">T-02 · C</span></p>
+
+  <div class="verdict">
+    <div class="yes"><h4>这证明了</h4><ul><li>辉瑞垫付了开发成本，并对 BioNTech 进行了约 1.13 亿美元的股权投资。</li><li>欧洲投资银行贷款最高 1 亿欧元；德国资助最高约 3.75 亿欧元。</li><li>辉瑞和 BioNTech 是试验发起方。</li></ul></div>
+    <div class="no"><h4>这没有证明</h4><ul><li>贝莱德为 BNT162 提供过任何资金。</li><li>默茨在这些交易中扮演过任何角色。</li><li>2020 年 3 月的日程重叠能说明任何问题。</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>剩余缺口：</b>尚未取得 BMBF 原始资助决定，以及欧洲投资银行的拨款档案（里程碑 → 付款日期 → 工作包）。</p>
+</section>
+
+<section class="chapter" id="thirteenf">
+  <div class="opener"><span class="num">03</span><h2>13F 幻象</h2><span class="label">为什么"贝莱德持有辉瑞"的含义比你想的少</span></div>
+
+  <p class="drop">关系网图那一派到这里彻底跑偏了。有人打开持股图表，看到贝莱德排在辉瑞股东名单前列，又看到默茨的名字挨着贝莱德，于是把点连了起来。结案了，对吧？</p>
+
+  <p>错。我们来读读真正的文件。</p>
+
+  <p>13F 表是美国大型投资管理人每季度向美国证券交易委员会（SEC）提交的申报，列出其报告的股票持仓。贝莱德 2020 年的合并申报把慕尼黑的 <em>BlackRock Asset Management Deutschland AG</em> 列为纳入申报的管理人之一。<span class="ev A">EC-07 · A</span>到这里，确实有关联。</p>
+
+  <p>但同一份申报明白写着：BlackRock, Inc. 是一家母控股公司，对其运营子公司管理的持仓<strong>不行使投资决定权</strong>。它申报这些持仓，是因为负有申报义务，而不是因为是它选的。<span class="ev A">EC-08 · A</span></p>
+
+  <blockquote class="pull">13F 申报自己就写着母公司没有挑选这些股票。还拿它当默茨操控疫苗项目的证据的人，要么看不懂，要么不想看懂。</blockquote>
+
+  <h3>数字，附带警示标签</h3>
+  <p>展示 13F 数据的第三方结构化网页列出了以下持仓。在任何人将其用于法律或所有权结论之前，必须与 SEC 原始申报逐行核对。<span class="ev A">EC-11 · A（按申报数据）</span></p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>证券</th><th>申报实体</th><th>日期</th><th>股数</th><th>申报市值</th></tr></thead>
+    <tbody>
+      <tr><td>BioNTech (BNTX)</td><td>BlackRock Finance, Inc.</td><td class="num">2020-12-31</td><td class="num">668,546</td><td class="num">5450 万美元</td></tr>
+      <tr><td>辉瑞 (PFE)</td><td>BlackRock Finance, Inc.</td><td class="num">2020-09-30</td><td class="num">414,768,435</td><td class="num">152.2 亿美元（7.3%）</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">日期不同。不要相加，也不要当作同一时点的快照。来源：PortfolioSavvy 对 SEC 13F 数据的呈现；原始申报仍待核查。</p>
+
+  <p>花一秒看看这些数字。150 亿美元的辉瑞持仓，正是当你管理着全球相当一部分指数基金、而辉瑞又是指数中最大的公司之一时，自然会出现的结果。这是普通的组合敞口，也是任何诚实的调查者首先必须排除的替代解释。BioNTech 的持仓在 2020 年底约 5400 万美元，对这种规模的机构来说只是零头。</p>
+
+  <h3>五个独立说法，假装成一个</h3>
+  <p>表情包把这当作一个事实来卖。其实是五个，每一个都需要自己的文件：</p>
+
+  <ol class="ladder">
+    <li>某只贝莱德基金持有辉瑞或 BioNTech 股票 <span class="stamp ok">有申报</span></li>
+    <li>默茨挑选了这些股票 <span class="stamp">无文件</span></li>
+    <li>这些钱流向了辉瑞或 BioNTech <span class="stamp">无文件</span></li>
+    <li>这些钱支付了某项具体试验 <span class="stamp">无文件</span></li>
+    <li>默茨控制了这项试验 <span class="stamp">无文件</span></li>
+  </ol>
+
+  <p>第三环断得最彻底。基金在交易所买股票时，钱付给的是卖出股票的人，而不是公司。要证明贝莱德资助了研究，你需要一次新股发行、一笔贷款、一份承销委托或一份项目合同。就 BNT162 而言，没有人找到过任何一样。<span class="ev C">F-06 · C</span> <span class="ev C">H-02 · C</span></p>
+
+  <div class="verdict">
+    <div class="yes"><h4>这证明了</h4><ul><li>贝莱德德国实体是集团 13F 申报的一部分。</li><li>在所列日期，存在贝莱德申报的辉瑞和 BioNTech 持仓。</li></ul></div>
+    <div class="no"><h4>这没有证明</h4><ul><li>是谁选择了这些持仓，或为什么。</li><li>这些持仓属于贝莱德自有资本。</li><li>其中任何资金资助了研究，或默茨参与其中。</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>剩余缺口：</b>需要依据 EDGAR 13F、N-PORT 和基金报告，逐季度还原 2016–2021 年的持仓，并归类为被动指数、主动选股、机构委托或无法确定。在此之前，任何"贝莱德持有 X"的大数字都只会制造更多混乱，而不是揭示真相。</p>
+</section>
+
+<section class="chapter" id="access">
+  <div class="opener"><span class="num">04</span><h2>接触不等于俘获</h2><span class="label">那些会面，以及没人必须保留的记录</span></div>
+
+  <p class="drop">现在说到真正该让你火大的部分。</p>
+
+  <p>2019 年 1 月，《明镜》周刊援引德新社关于联邦政府答复议会质询的报道称，默茨以贝莱德身份与联邦高层官员会面四次。<span class="ev A">EC-09 · A</span></p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>日期</th><th>会面对象</th><th>报道的背景</th></tr></thead>
+    <tbody>
+      <tr><td class="num">2017-10-17</td><td>西格马尔·加布里尔，外交部长兼副总理</td><td>默茨以贝莱德德国子公司监事会主席身份</td></tr>
+      <tr><td class="num">2018-03-07</td><td>西格马尔·加布里尔</td><td>同一身份</td></tr>
+      <tr><td class="num">2018-04-26</td><td>赫尔格·布劳恩，总理府部长</td><td>基民盟经济委员会主席团会议间隙</td></tr>
+      <tr><td class="num">2018-09-12</td><td>财政部长奥拉夫·朔尔茨与国务秘书约尔格·库基斯</td><td>"金融市场问题"</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>后来的一份政府答复，即联邦议院文件 19/18436，又补充了：2018 年 12 月 12 日与彼得·阿尔特迈尔在阿登纳基金会的一场讨论，议题为"一般事项"；2020 年 1 月 21 日与库基斯的一次通话；以及 2020 年 3 月 20 日默茨与库基斯关于"当前金融市场问题"的讨论。没有任何一条提到 BioNTech、辉瑞或医药议题。</p>
+
+  <p>"一般事项。""金融市场问题。"这就是全球最大资产管理公司驻德国代言人与治理这个国家的人谈了什么的全部公开记录。没有会议纪要。没有备忘录。只有一行写在餐巾纸上都嫌短的议题。</p>
+
+  <blockquote class="pull">丑闻不是什么秘密疫苗计划。丑闻是这套制度的设计让任何人都不必写下任何东西。</blockquote>
+
+  <h3>来得太迟的登记册</h3>
+  <p>德国《游说登记法》于 2021 年 4 月 16 日通过，2022 年 1 月 1 日生效。BlackRock Asset Management Deutschland AG 的首次登记日期为 2022 年 3 月 14 日，距默茨离任已近两年。<span class="ev E">EC-10 · 作为时间说法被反驳</span>因此，登记册无法告诉你他做了什么，而它对 2016–2020 年的沉默，也不能证明任何一方。欧盟透明度登记册直到 2021 年才在事实上对直接接触变为强制。</p>
+
+  <p>在关键的那几年里，规则根本不要求留下你所需要的书面痕迹。这才是真正的控诉。不是针对某一个人，而是针对一种政治文化：它允许一位前党团领袖替金融巨头在走廊里奔走，却把一行字的议题摘要称作"透明"。</p>
+
+  <h3>给我们自己的愤怒泼冷水</h3>
+  <p>按照承诺，现在泼冷水。会面不是决策。议题不是政策变化。没有任何文件显示，有官员因为默茨而采纳了贝莱德的立场或改变了决定。<span class="ev C">M-06 · C</span> <span class="ev E">EC-12 · 无依据</span>档案中有一份研究备忘录专门查找他的贝莱德职务与德国医药政策咨询之间的联系，结果一无所获。唯一找到的，是他早在 2003 年出席一次雇主背景的自由化活动的公开记录。</p>
+
+  <div class="verdict">
+    <div class="yes"><h4>这证明了</h4><ul><li>默茨以贝莱德身份多次接触到政府最高层。</li><li>关于谈话内容的公开记录几乎是空白。</li><li>当时游说登记册尚不存在。</li></ul></div>
+    <div class="no"><h4>这没有证明</h4><ul><li>实际谈了什么。</li><li>任何政策因此改变。</li><li>涉及任何医药或疫苗议题。</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>剩余缺口：</b>联邦议院的原始质询与答复，以及 2016 年 3 月 1 日至 2020 年 3 月 31 日期间各部委的日程、访客登记、会谈准备材料和往来信函。只差一份信息公开（IFG）申请。见第 08 章。</p>
+</section>
+
+<section class="chapter" id="rumor">
+  <div class="opener"><span class="num">05</span><h2>最丑陋的谣言</h2><span class="label">我们查过了，你就不必再转发</span></div>
+
+  <p class="drop">在这个圈子里流传着一个说法：一名匿名证人称，默茨与 BioNTech 创始人乌乌尔·沙欣和厄兹莱姆·图雷西一起参与了"人体实验"。我们追查了。</p>
+
+  <p>没有原始证词。没有录音。没有日期、地点、具名受害者、研究方案或任何文件。什么都没有。</p>
+
+  <p>记录里能看到的东西是公开的，坦白说相当平常。作为总理，默茨在 2025 年 6 月 10 日沙欣和图雷西于柏林获颁德国国家奖时致颂词。2025 年 12 月 9 日，他访问了二人参与创办的美因茨 TRON 研究所，并表示此前已多次与他们讨论其工作。这是一位政治家在表彰知名科学家、支持生物技术。每个政府首脑都会这样做。</p>
+
+  <p>与此同时，那个据称由他操控的试验体系，留下的记录恰恰指向相反方向。PEI 在进行获益-风险评估后批准了德国试验，并要求伦理委员会给出肯定意见。试验登记要求在任何试验程序之前签署知情同意书。这不能证明每个试验点的每一份同意书都完美无缺。但它是一条书面痕迹，而谣言一条都没有。</p>
+
+  <p>有一个细节值得核查，而不是拿来叫嚷：PEI 称，对 BioNTech 申请的首轮审查用了四个工作日，理由是增派人员、事先咨询和提前评估文件。快不等于造假。要检验它，靠的是审查档案，而不是直觉。</p>
+
+  <p>档案的结论：以 95% 的置信度判断，该指控没有任何公开证据支持。这不是说任何地方从未发生过坏事，而是说这一项具体指控毫无依据。<span class="ev C">无佐证</span></p>
+
+  <blockquote class="pull">一项针对具名个人、毫无细节的匿名医疗犯罪指控，不是线索，而是法律风险。</blockquote>
+
+  <p class="gapline"><b>剩余缺口：</b>如果这名证人真实存在，一切都要从原始材料开始：完整证词、来源、日期、具体干预、地点、所称受害者，以及证人如何得知。没有这些，指控就无法检验，只能以"未经证实"的方式刊出。</p>
+</section>
+
+<section class="chapter" id="biology">
+  <div class="opener"><span class="num">06</span><h2>生物学指控</h2><span class="label">"有东西被放进了我的 DNA。"你要怎样才能知道。</span></div>
+
+  <p class="drop">这是人们会切身感受到的部分，所以它值得最多的尊重，也值得最严格的标准。这一说法最尖锐的形式是：某人的 DNA 在未经同意的情况下被改变，也许植入了非人类遗传物质，也许是某个项目的一部分。</p>
+
+  <p>几乎没人大声说出的一点是：这是整个故事里<em>最容易</em>检验的说法之一。会面可以从记录中消失，谈话可以没有纪要。但 DNA 是一部约三十亿个字母的文本。如果有人往里贴了一个外来章节，原则上你可以指出那些字母、人类序列与外来序列相接的缝合处，以及它在染色体上的确切位置。</p>
+
+  <p>到目前为止，所有档案中都没有提交过这类个案证据。没有测序结果、病理报告、治疗记录、试验编号、批号、载体序列或整合位点。<span class="ev C">B-01 · C</span>这并不是说无法解释的症状不真实或不值得就医，而是说在有可检验的材料之前，这一假设停留在 C 级。</p>
+
+  <h3>科学怎么说，不加包装</h3>
+  <p>人类基因改造是真实存在的。Casgevy 是一种 CRISPR 疗法，在体外编辑患者自身的造血干细胞，于 2024 年 2 月 9 日获得欧盟批准。人兽嵌合胚胎已在实验室中制造出来，2017 年发表于《细胞》，2021 年又有灵长类研究跟进。这些都不是科幻。<span class="ev A">A</span></p>
+
+  <p>但这一切都是公开进行的，有知情同意书、伦理委员会、登记系统和已发表的论文。而且嵌合体指的是不同的细胞并存，而不是把动物基因拼接进人类染色体。用词在这里很重要。</p>
+
+  <p>具体到 mRNA 疫苗：欧洲药品管理局说明，Comirnaty 的 mRNA 只是给细胞临时指令，随后被降解。2022 年的一项实验室研究（Aldén 等）在培养皿中的人类肝细胞系里发现了来源于疫苗的 DNA，并明确写道是否整合进基因组尚不清楚。主要综述指出，mRNA 发挥作用无需进入细胞核。"产品含有遗传物质"不等于"接受者的基因组被改变"。后者需要直接的基因组证据，其他一概不算。</p>
+
+  <h3>陷阱</h3>
+  <p>一条看起来像动物、细菌或病毒的测序读段，证明不了任何事。实验室里到处是非人类 DNA，你的身体里满是微生物。测序仪会产生伪影；某些 Illumina 仪器上一个已知的伪影甚至会模仿低频突变。一条奇怪的读段是调查的开始，而不是结束。<span class="ev D">B-02 · D</span>仅凭症状无法证明 DNA 被拼接。即使是真实、已确认的发现，也无法说明是谁干的。<span class="ev D">B-03 · D</span></p>
+
+  <p class="gapline"><b>剩余缺口：</b>全部。相关事件的医疗记录、生物学上合理的组织、测序、人类与外来 DNA 的接合点、正交验证，以及第二家独立实验室。完整流程见第 08 章。</p>
+</section>
+
+<section class="chapter" id="archive">
+  <div class="opener"><span class="num">07</span><h2>真实暴行档案</h2><span class="label">当档案打开时，真正的非自愿项目是什么样子</span></div>
+
+  <p class="drop">谁要是跟你说"机构绝不会干这种事"，他不是在撒谎就是无知。它们干过。一再干过。而且我们确切知道自己是怎么知道的。</p>
+
+  <p><strong>塔斯基吉，1932–1972 年。</strong>美国公共卫生署眼看着患梅毒的黑人男性四十年得不到治疗，没有知情同意，并在青霉素已经问世后仍不给予有效治疗。美国疾病控制与预防中心在其官网上记录了此事。</p>
+
+  <p><strong>危地马拉，1946–1948 年。</strong>美国资助的研究人员在未经同意的情况下，故意让囚犯、士兵和精神病患者感染性病。这是一种比塔斯基吉更主动的虐待。</p>
+
+  <p><strong>辐射实验。</strong>美国官方档案记录了一些患者被注射钚或铀，却没有令人信服的证据表明他们知道自己是实验对象。在一份往来信函中，甚至有人建议不要把某些钚数据写进医院病历。</p>
+
+  <p><strong>MKUltra。</strong>中央情报局的精神控制项目。局长理查德·赫尔姆斯在 1973 年下令销毁档案。但参议院仍在 1977 年举行了听证，因为约两万页财务和行政记录躲在一个放错的档案柜里幸存了下来。</p>
+
+  <blockquote class="pull">权力会做出骇人的事。正因如此，指控必须有证据：真正的恶魔，都是被纸面证据抓住的。</blockquote>
+
+  <p>看看这些案件是怎样被证实的。不是靠一部情节相似的电影，也不是靠一种感觉。靠的是研究方案、受试者名单、资金记录、往来信函、证词和官方调查。连蓄意销毁档案的 MKUltra，也是被躲过碎纸机的文件揭穿的。</p>
+
+  <p>这些丑闻也带来了真实的成果：《国家研究法》、《贝尔蒙报告》、伦理委员会，以及写入法律的知情同意。我们今天用来检验本期这类说法的整套机制，正是<em>因为</em>有人把那些档案拖到了阳光下才存在的。</p>
+
+  <p>所以历史是双刃剑。它驳倒了"他们绝不会这么做"，也驳倒了"塔斯基吉发生过，所以我的理论就成立"。两者都推不出来。正确的教训一张贴纸就写得下：<strong>权力需要监督，指控需要证据。</strong></p>
+
+  <p>文化也是一样。《弗兰肯斯坦》、《莫罗博士岛》、《侏罗纪公园》、《千钧一发》、《生化奇兵》：都是精彩的故事、有用的隐喻，有时也是好问题的来源。但它们不是病历、测序数据或资金合同。<span class="ev E">C-01 · E</span></p>
+
+  <p class="gapline"><b>剩余缺口：</b>对于本期所涉及的当代说法，目前还没有任何同等的原始材料。没有研究方案、受试者名单、资金记录，也没有公开的证词。</p>
+</section>
+
+<section class="chapter" id="proof">
+  <div class="opener"><span class="num">08</span><h2>什么才能真正证明</h2><span class="label">给想要填补缺口的人的实地手册</span></div>
+
+  <p class="drop">缺什么已经说够了。下面讲怎么去拿。这一切都不需要黑客或泄密，只需要信件、表格和韧劲。</p>
+
+  <h3>第一条线：机构链条</h3>
+  <p>要证明影响，你需要六个环节，每一环都要有书面依据：（1）实际持有某证券的基金和管理人；（2）委托授权，以及谁拥有交易或投票权；（3）涉及具名个人的沟通或指令；（4）具体的研究、监管、政策或采购决定；（5）负责的机构和决策者；（6）当时的证据，表明此人的行为改变了该决定。断掉一环，指控就变弱。找齐六环，你就有了一个谁也压不下去的报道。</p>
+
+  <div class="box"><span class="label">模板 · 德国《信息自由法》（IFG）申请</span>
+  分别发送给联邦总理府、财政部和经济部，可用电子邮件或信件。范围越窄越好。"把关于贝莱德的一切都给我"不会有结果。申请需用德文提交：
+  <pre>Alle Kalendereinträge, Besucherregistrierungen, Gesprächsvermerke und Korrespondenz zwischen dem 1. März 2016 und dem 31. März 2020, in denen Friedrich Merz in seiner Funktion für die BlackRock Asset Management Deutschland AG vorkommt.</pre></div>
+
+  <p>然后：查商业登记处和联邦公报，了解监事会结构和年报；查 EDGAR，获取 2016 至 2021 年的每一份 13F、N-PORT 和 13G 申报；查欧盟透明度登记册的历史数据和委员日程（金融稳定总司、竞争总司、卫生总司）；以及欧洲投资银行关于 BioNTech 贷款的项目登记。</p>
+
+  <h3>第二条线：生物学链条</h3>
+  <p>对于认为这种事发生在自己身上的人：顺序比预算更重要。从病历开始，而不是从网购的 DNA 检测盒开始。</p>
+
+  <div class="protocol" aria-label="流程顺序"><span>检出</span><span>定位</span><span>验证</span><span>重复</span><span>因果</span><span>归属</span></div>
+
+  <ol class="ladder">
+    <li>调取相关事件的完整病历：含批号的用药和给药记录、同意书、手术和麻醉记录、病理报告、任何试验编号。要的是文件，不是认罪。<span class="stamp ok">第一步</span></li>
+    <li>去认可的遗传中心看临床遗传学医生。在比利时，鲁汶大学医院人类遗传中心是八家认可中心之一，通过 ISO 15189 认证。询问哪种组织具有检测价值。<span class="stamp ok">第二步</span></li>
+    <li>用短读长全基因组测序做广泛筛查；用长读长测序跨越结构变化，寻找人类与外来 DNA 的接合点。<span class="stamp">实验室</span></li>
+    <li>用接合点 PCR、桑格测序和数字 PCR 确认任何候选结果。单一技术本身证明不了什么。<span class="stamp">验证</span></li>
+    <li>由第二家独立实验室，使用其自己单独封存的样本，并记录完整的监管链。<span class="stamp">重复</span></li>
+    <li>只有到这时，才把该特征与产品、批次、日期、地点和人对应起来，并证明当时没有同意。<span class="stamp">归属</span></li>
+  </ol>
+
+  <p>一个有力的说法应该是这样的："在组织 X 中存在 DNA 序列 Y，超出正常人类变异范围，在接合点 J 处与 Z 号染色体物理相连，并由两家独立实验室重复验证。"这是可证伪的。"我被杂交改造了"则不是。前一种在法庭上会被认真对待，后一种只会被当成笑话。</p>
+
+  <p>如果病历被拒绝提供，比利时的途径有：联邦公共卫生部的患者权利渠道；涉及疑似试验和不良反应时，向联邦药品与保健品管理局（FAGG）使用专门的报告表格（超过一年的一般投诉不走标准途径）；如果健康数据被扣留，可找数据保护局（GBA）。保留原件：EML 邮件文件、信件和回执，而不只是复制的文字。</p>
+
+  <p class="gapline"><b>剩余缺口：</b>这一章本身就是缺口清单。上面的每一步都是一份尚未取得的文件或一项尚未完成的检测。</p>
+</section>
+
+<section class="chapter" id="verdict">
+  <div class="opener"><span class="num">09</span><h2>证据链不完整</h2><span class="label">结案陈词</span></div>
+
+  <p class="drop">那么我们处于什么位置？两条线索，我们不会为了一个廉价的结局把它们混为一谈。</p>
+
+  <p><strong>机构这条线成立。</strong>弗里德里希·默茨，如今的德国总理，曾经四年担任全球最大资产管理公司在德国的主席和开门人。他以这一身份会见了一位副总理、总理府部长和财政部长。关于他们谈了什么，公开记录只有寥寥几行议题。本可以记录这一切的游说登记册，在他离任两年后才出现。这一切都是 A 级，也都是关于金钱如何在柏林与权力对话的正当丑闻。</p>
+
+  <p><strong>生物学这条线目前不成立，至少现在还不成立。</strong>没有任何文件把默茨或贝莱德与任何疫苗决策、试验或融资联系起来。没有任何样本、序列或记录显示有人的 DNA 在未经同意的情况下被改变。这些说法停留在 C 级。它们可能会变，但要靠纸面证据和测序数据，而不是音量。</p>
+
+  <blockquote class="pull">两个真实的网络。没有被证实的桥梁。这既不是掩盖，也不是无罪判决。这是还没有人去做的工作。</blockquote>
+
+  <p>如果你是来看人把点连起来的，抱歉。点不会自己连起来，而在没有文件的情况下替你连线的人，一定是在推销什么。如果你想知道什么是真的，答案在这里：门路是真的，不透明是真的，资金链是公开的，而缺失的环节都有名字、地址和档案编号。去把它们拿到手。</p>
+
+  <h3>待解问题</h3>
+  <ul>
+    <li>默茨在贝莱德德国监事会中有哪些法定权限？（商业登记处）</li>
+    <li>2016 至 2021 年，哪些贝莱德基金持有辉瑞和 BioNTech，依据何种委托？（EDGAR、N-PORT）</li>
+    <li>七次有记录的政府接触中究竟谈了什么？（IFG 申请）</li>
+    <li>BMBF 那笔 3.75 亿欧元原始资助决定的条款是什么？（BMBF）</li>
+    <li>PEI 审查档案对那次四天评估是怎么写的？（PEI）</li>
+    <li>是否有任何人拥有序列层面、经独立重复验证的非自愿基因改造证据？（临床遗传学）</li>
+  </ul>
+</section>
+
+<section class="chapter" id="register">
+  <div class="opener"><span class="num">A</span><h2>证据登记表</h2><span class="label">汇编自 Project Evidence Chain 调查档案</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>编号</th><th>说法</th><th>评级</th><th>缺少什么</th></tr></thead>
+    <tbody>
+      <tr><td class="num">M-01</td><td>默茨担任 BAM Deutschland AG 监事会主席</td><td><span class="ev A">A</span></td><td>用于完整证据链的登记摘录</td></tr>
+      <tr><td class="num">M-02</td><td>其职责包括客户、监管者、政府</td><td><span class="ev A">A</span></td><td>具体接触记录</td></tr>
+      <tr><td class="num">M-03</td><td>他负责德国日常业务</td><td><span class="ev D">D</span></td><td>—</td></tr>
+      <tr><td class="num">M-04</td><td>他是贝莱德公司 CEO</td><td><span class="ev D">D</span></td><td>—</td></tr>
+      <tr><td class="num">M-05</td><td>他积极参与客户和人脉活动</td><td><span class="ev A">A</span></td><td>完整日程</td></tr>
+      <tr><td class="num">M-06</td><td>他影响了某项具体医药决策</td><td><span class="ev C">C</span></td><td>会谈记录、信函、决定</td></tr>
+      <tr><td class="num">EC-09</td><td>2017–2018 年与高层官员的四次会面</td><td><span class="ev A">A</span></td><td>原始答复、会议纪要</td></tr>
+      <tr><td class="num">EC-10</td><td>游说登记册涵盖其任期</td><td><span class="ev D">D</span></td><td>登记册始于 2022 年</td></tr>
+      <tr><td class="num">F-01–03</td><td>辉瑞–BioNTech 合作，预付 1.85 亿美元，辉瑞垫付成本</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">F-04</td><td>欧洲投资银行最高 1 亿欧元</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">F-05</td><td>德国最高约 3.75 亿欧元</td><td><span class="ev B">B*</span></td><td>BMBF 原始决定</td></tr>
+      <tr><td class="num">F-06</td><td>贝莱德直接资助 BNT162</td><td><span class="ev C">C</span></td><td>任何融资合同</td></tr>
+      <tr><td class="num">EC-07/08</td><td>德国实体列入 13F；母公司声明不行使决定权</td><td><span class="ev A">A</span></td><td>基金层面的分配</td></tr>
+      <tr><td class="num">H-02</td><td>默茨挑选了这些股票持仓</td><td><span class="ev C">C</span></td><td>投资委员会记录、交易指令</td></tr>
+      <tr><td class="num">T-01</td><td>辉瑞/BioNTech 是试验发起方</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">T-02</td><td>贝莱德发起或主导了试验</td><td><span class="ev C">C</span></td><td>任何证据</td></tr>
+      <tr><td class="num">—</td><td>匿名的"人体实验"说法</td><td><span class="ev C">C</span></td><td>任何细节或佐证</td></tr>
+      <tr><td class="num">B-01</td><td>某个特定的人携带人工植入的非人类 DNA</td><td><span class="ev C">C</span></td><td>样本、测序、接合点</td></tr>
+      <tr><td class="num">B-02</td><td>仅凭症状即可证明 DNA 被拼接</td><td><span class="ev D">D</span></td><td>直接基因组证据</td></tr>
+      <tr><td class="num">B-03</td><td>仅凭异常序列即可确定责任人</td><td><span class="ev D">D</span></td><td>批次与干预链条</td></tr>
+      <tr><td class="num">C-01</td><td>神话和电影能证明真实实验</td><td><span class="ev E">E</span></td><td>独立证据</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">* 该事件被广泛报道；B 级仅反映原始资助决定尚未取得。</p>
+</section>
+
+<!-- Sources -->
+<section class="chapter" id="sources">
+  <div class="opener"><span class="num">B</span><h2>资料来源</h2><span class="label">尽可能使用原始来源</span></div>
+  <ol class="sources">
+    <li><a href="https://www.finanzwelt.de/post/blackrock-ernennt-friedrich-merz-zum-chairman-fuer-deutschland">Finanzwelt: BlackRock ernennt Friedrich Merz zum Chairman für Deutschland</a></li>
+    <li><a href="https://www.manager-magazin.de/unternehmen/personalien/friedrich-merz-wird-lobbyist-des-investmentriesen-blackrock-a-1082798.html">Manager Magazin: Blackrock holt sich Ex-Spitzenmann der CDU als Lobbyisten</a></li>
+    <li><a href="https://www.spiegel.de/wirtschaft/unternehmen/friedrich-merz-bleibt-aufsichtsrat-bei-blackrock-a-1248702.html">Der Spiegel: Friedrich Merz bleibt Aufsichtsrat bei Blackrock</a></li>
+    <li><a href="https://www.spiegel.de/politik/deutschland/friedrich-merz-soll-als-blackrock-lobbyist-viermal-bundesminister-getroffen-haben-a-1249428.html">Der Spiegel: Merz soll als Blackrock-Lobbyist viermal Bundesminister getroffen haben</a></li>
+    <li><a href="https://www.dasinvestment.com/zum-1-juli-nachfolger-fuer-friedrich-merz-bei-blackrock-steht-fest/">DAS INVESTMENT: Nachfolger für Friedrich Merz bei Blackrock steht fest</a></li>
+    <li><a href="https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-biontech-announce-further-details-collaboration">Pfizer: Further details on collaboration with BioNTech (9 April 2020)</a></li>
+    <li><a href="https://www.eib.org/en/press/all/2020-144-eib-to-provide-biontech-with-up-to-eur-100-million-in-debt-financing-for-covid-19-vaccine-development-and-manufacturing">EIB: up to €100 million debt financing for BioNTech</a></li>
+    <li><a href="https://www.fda.gov/media/144245/download">FDA: VRBPAC briefing document, 10 December 2020</a></li>
+    <li><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/comirnaty">EMA: Comirnaty EPAR</a></li>
+    <li><a href="https://portfoliosavvy.com/portfolio/000108636421000004-blackrock-inc-q4-2020">BlackRock Q4 2020 13F combination report (PortfolioSavvy)</a></li>
+    <li><a href="https://portfoliosavvy.com/investor/0001364742/investment/09075V102">BlackRock Finance, Inc. BNTX holdings history (PortfolioSavvy)</a></li>
+    <li><a href="https://portfoliosavvy.com/investment/717081103/2020/4">PFE Q4 2020 13F institutional holders (PortfolioSavvy)</a></li>
+    <li><a href="https://www.gesetze-im-internet.de/lobbyrg/LobbyRG.pdf">Lobbyregistergesetz (LobbyRG)</a></li>
+    <li><a href="https://www.lobbyregister.bundestag.de/suche/R003422">Lobbyregister: BlackRock Asset Management Deutschland AG</a></li>
+    <li><a href="https://transparency-register.europa.eu/index_en">EU Transparency Register</a></li>
+    <li><a href="https://www.bundesregierung.de/breg-de/aktuelles/deutscher-nationalpreis-2025-2353552">Bundesregierung: Deutscher Nationalpreis 2025 for the BioNTech founders</a></li>
+    <li><a href="https://doi.org/10.1136/bmj-2022-073747">Lalani et al., BMJ 2023: US public investment in mRNA COVID-19 vaccines</a></li>
+    <li><a href="https://doi.org/10.1001/jamanetworkopen.2022.26892">Angelis et al., JAMA Netw Open 2022: funding sources of COVID-19 trials</a></li>
+    <li><a href="https://doi.org/10.3390/cimb44030073">Aldén et al., 2022: reverse transcription of BNT162b2 in a liver cell line in vitro</a></li>
+    <li><a href="https://doi.org/10.1093/ser/mww040">Kinderman, Socio-Economic Review 2016</a></li>
+    <li><a href="https://www.cdc.gov/tuskegee/about/index.html">CDC: About the Untreated Syphilis Study at Tuskegee</a></li>
+    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">HHS: The Belmont Report</a></li>
+    <li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/long-term-follow-after-administration-human-gene-therapy-products">FDA: Long-term follow-up after human gene therapy</a></li>
+    <li><a href="https://www.uzleuven.be/nl/centrum-menselijke-erfelijkheid">UZ Leuven: Centrum Menselijke Erfelijkheid</a></li>
+    <li><a href="https://www.famhp.be/en/complaints">FAMHP (FAGG): Complaints</a></li>
+    <li><a href="https://www.gegevensbeschermingsautoriteit.be/burger/acties/klacht-indienen">Gegevensbeschermingsautoriteit: Klacht indienen</a></li>
+  </ol>
+</section>
+
+
+
+<footer class="label">Evidence Chain · 特别版第 1 期 · 基于 Project Evidence Chain 调查档案编写。评级描述的是已找到的证据，而不是"从未发生任何未披露之事"的概率。</footer>
+</main>
+
+</body>
+</html>

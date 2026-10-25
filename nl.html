@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Evidence Chain Speciale editie</title>
+<meta name="description" content="Friedrich Merz, BlackRock en het vaccingeld: wat de documenten bewijzen, wat niet, en elke ontbrekende schakel benoemd.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evidence Chain Speciale editie">
+<meta property="og:description" content="Friedrich Merz, BlackRock en het vaccingeld: wat de documenten bewijzen, wat niet, en elke ontbrekende schakel benoemd.">
+<meta property="og:locale" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="./"><link rel="alternate" hreflang="de" href="de.html"><link rel="alternate" hreflang="nl" href="nl.html"><link rel="alternate" hreflang="zh" href="zh.html">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: a single 66ch reading column on photocopy-grey paper; chapter openers break out wide; evidence-tape yellow is the one loud element. */
+:root{
+  --paper:#E8EAE5; --paper-2:#DCDFD8; --ink:#15171A; --muted:#565C58; --rule:#C3C7BF;
+  --tape:#F2C200; --tape-ink:#15171A; --stamp:#B0261D;
+  --gA:#2E6A39; --gB:#2A5C88; --gC:#8C6200; --gD:#A3271F; --gE:#6A5A7B;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.18rem;line-height:1.62;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
+a{color:inherit;text-decoration-color:var(--tape);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--tape);outline-offset:2px}
+.col{max-width:66ch;margin-inline:auto}
+.wide{max-width:1080px;margin-inline:auto}
+p{margin:0 0 1.05em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:.95;margin:0;font-weight:900;text-transform:uppercase}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-block:1.4rem .6rem}
+.mast .name{font-family:var(--display);font-weight:900;font-size:1.6rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* cover */
+.cover{padding-block:2.2rem 1rem}
+.cover .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.cover h1{font-size:clamp(3rem,10vw,7.4rem);letter-spacing:-.01em}
+.cover h1 em{font-style:normal;background:var(--tape);color:var(--tape-ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.cover .dek{font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.4;max-width:46ch;margin-top:1.4rem}
+.byline{margin-top:1.2rem}
+
+.tape{background:var(--tape);color:var(--tape-ink);font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.18em;
+  font-size:clamp(.95rem,2.2vw,1.25rem);white-space:nowrap;overflow:hidden;padding:.45rem 0;transform:rotate(-1.6deg);margin:2.2rem calc(-1 * max(16px,env(safe-area-inset-left,0px))) 2.4rem;
+  border-block:3px solid var(--tape-ink)}
+.tape span{display:inline-block;padding-left:1rem;animation:crawl 60s linear infinite}
+@keyframes crawl{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape span{animation:none}}
+
+/* chain figure */
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:.6rem;margin:1rem 0 .4rem}
+.link{flex:1 1 150px;min-width:0;border:3px solid var(--ink);border-radius:999px;padding:.8rem 1.1rem;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.15rem}
+.link b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.05;letter-spacing:.02em}
+.link small{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.link.gap{border-style:dashed;border-color:var(--stamp);color:var(--stamp)}
+.link.gap small{color:var(--stamp)}
+.figcap{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.5;margin-top:.5rem}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:1px solid var(--rule);margin-block:2rem 3rem}
+.toc a{display:grid;grid-template-columns:2.6rem 1fr;gap:.4rem;padding:.8rem .4rem;border-bottom:1px solid var(--rule);text-decoration:none}
+.toc a:hover{background:var(--paper-2)}
+.toc .n{font-family:var(--display);font-weight:900;font-size:1.6rem;line-height:1}
+.toc .t{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.1}
+
+/* chapter openers */
+.chapter{margin-top:4.5rem;scroll-margin-top:1rem}
+.opener{display:grid;grid-template-columns:auto 1fr;gap:0 1.2rem;align-items:end;border-top:3px solid var(--ink);padding-top:1rem;margin-bottom:1.8rem}
+.opener .num{font-family:var(--display);font-weight:900;font-size:clamp(4.5rem,13vw,8rem);line-height:.8;color:var(--tape);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+.opener h2{font-size:clamp(2.2rem,6vw,4rem)}
+.opener .label{grid-column:1/-1;margin-top:.8rem}
+
+h3{font-size:1.6rem;margin:2.2rem 0 .7rem}
+.drop::first-letter{font-family:var(--display);font-weight:900;float:left;font-size:4.6em;line-height:.78;padding:.06em .08em 0 0}
+
+blockquote.pull{margin:2rem 0;padding:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.02;border:none}
+blockquote.pull::before{content:"";display:block;width:3.5rem;height:.45rem;background:var(--tape);margin-bottom:.7rem}
+
+/* evidence chips */
+.ev{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;border:1.5px solid currentColor;border-radius:3px;padding:.05em .38em;vertical-align:.12em}
+.ev.A{color:var(--gA)}.ev.B{color:var(--gB)}.ev.C{color:var(--gC)}.ev.D{color:var(--gD)}.ev.E{color:var(--gE)}
+
+/* proves / doesn't */
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink);margin:1.8rem 0;font-size:1rem;line-height:1.5}
+.verdict>div{padding:1rem 1.1rem;min-width:0}
+.verdict>div+div{border-left:2px solid var(--ink);background:var(--paper-2)}
+.verdict h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem}
+.verdict .yes h4{color:var(--gA)} .verdict .no h4{color:var(--stamp)}
+.verdict ul{margin:0;padding-left:1.1rem}
+.verdict li+li{margin-top:.35rem}
+@media (max-width:600px){.verdict{grid-template-columns:1fr}.verdict>div+div{border-left:none;border-top:2px solid var(--ink)}}
+
+/* gap line at chapter end */
+.gapline{font-family:var(--mono);font-size:.8rem;line-height:1.55;border-left:6px solid var(--stamp);padding:.6rem 0 .6rem 1rem;margin-top:2rem}
+.gapline b{color:var(--stamp);letter-spacing:.1em}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:1.4rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.4;min-width:560px}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.6rem .6rem;border-bottom:1px solid var(--rule)}
+td{padding:.6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+
+/* timeline */
+.timeline{list-style:none;margin:1.6rem 0;padding:0;border-left:3px solid var(--ink)}
+.timeline li{position:relative;padding:0 0 1.1rem 1.3rem;font-size:1rem;line-height:1.45}
+.timeline li::before{content:"";position:absolute;left:-9px;top:.35rem;width:15px;height:15px;background:var(--paper);border:3px solid var(--ink);border-radius:50%}
+.timeline li.merz::before{background:var(--tape)}
+.timeline time{display:block;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+
+/* five-link ladder */
+.ladder{counter-reset:step;display:grid;gap:.5rem;margin:1.6rem 0;padding:0;list-style:none}
+.ladder li{counter-increment:step;display:grid;grid-template-columns:2.6rem 1fr auto;gap:.8rem;align-items:center;border:2px solid var(--ink);padding:.7rem .9rem;font-size:1rem;line-height:1.35}
+.ladder li::before{content:counter(step);font-family:var(--display);font-weight:900;font-size:1.8rem;line-height:1}
+.stamp{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--stamp);border:2px solid var(--stamp);padding:.15rem .45rem;transform:rotate(-4deg);white-space:nowrap}
+.stamp.ok{color:var(--gA);border-color:var(--gA)}
+@media (max-width:480px){.ladder li{grid-template-columns:2rem 1fr}.ladder .stamp{grid-column:2;justify-self:start}}
+
+/* protocol strip */
+.protocol{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.4rem 0}
+.protocol span{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1rem;letter-spacing:.04em;border:2px solid var(--ink);padding:.35rem .7rem}
+.protocol span:not(:last-child)::after{content:" →";color:var(--muted)}
+
+/* scale */
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin:1.6rem 0}
+.scale div{border-top:8px solid currentColor;padding-top:.5rem;font-size:.92rem;line-height:1.35;min-width:0}
+.scale b{display:block;font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:1}
+.scale span{color:var(--ink)}
+@media (max-width:640px){.scale{grid-template-columns:1fr}.scale div{display:grid;grid-template-columns:2.6rem 1fr;gap:.6rem;align-items:start}}
+
+.box{background:var(--paper-2);border:2px solid var(--ink);padding:1.1rem 1.2rem;margin:1.8rem 0;font-size:1rem;line-height:1.55}
+.box .label{display:block;margin-bottom:.5rem}
+.box pre{white-space:pre-wrap;font-family:var(--mono);font-size:.85rem;margin:.4rem 0 0}
+
+/* art desk */
+.plates{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.4rem}
+.plate{border:2px solid var(--ink);padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.plate h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.15rem;margin:0}
+.plate p{font-family:var(--mono);font-size:.76rem;line-height:1.55;margin:0;flex:1}
+.plate button{align-self:flex-start;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--tape);color:var(--tape-ink);border:2px solid var(--tape-ink);padding:.35rem .7rem;cursor:pointer}
+
+.sources{font-size:.9rem;line-height:1.5}
+.sources li{margin-bottom:.45rem;overflow-wrap:anywhere}
+footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
+
+/* language switcher */
+.lang{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:flex-end;padding-top:.7rem}
+.lang a{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-decoration:none;border:2px solid var(--ink);padding:.25rem .55rem;min-width:2.6rem;text-align:center}
+.lang a:hover{background:var(--paper-2)}
+.lang a[aria-current="page"]{background:var(--tape);color:var(--tape-ink);border-color:var(--tape-ink)}
+/* Chinese */
+:root:lang(zh){--display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--body:"Noto Serif SC","Songti SC","SimSun",serif}
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3,:lang(zh) .link b,:lang(zh) .toc .t,:lang(zh) blockquote.pull,:lang(zh) .stamp,:lang(zh) .protocol span{letter-spacing:0;line-height:1.2}
+:lang(zh) .cover h1{font-size:clamp(2.4rem,7.5vw,5.6rem)}
+:lang(zh) .opener h2{font-size:clamp(1.8rem,5vw,3.2rem)}
+:lang(zh) blockquote.pull{font-size:clamp(1.3rem,3.4vw,1.9rem)}
+:lang(zh) .drop::first-letter{float:none;font-size:inherit;line-height:inherit;padding:0;font-family:inherit;font-weight:inherit}
+:lang(zh) body{line-height:1.85}
+
+</style>
+</head>
+<body>
+<div class="wide">
+  <header class="mast">
+    <span class="name">Evidence Chain</span>
+    <span class="label">Speciale editie · Nr. 1 · Oktober 2026</span>
+  </header>
+  <nav class="lang" aria-label="Language / Sprache / Taal / 语言"><a href="./" hreflang="en" lang="en">EN</a><a href="de.html" hreflang="de" lang="de">DE</a><a href="nl.html" hreflang="nl" lang="nl" aria-current="page">NL</a><a href="zh.html" hreflang="zh" lang="zh">中文</a></nav>
+
+  <section class="cover">
+    <div class="kicker">Een forensische speciale editie</div>
+    <h1>Volg het geld. <em>Stop waar het papier stopt.</em></h1>
+    <p class="dek">Friedrich Merz, BlackRock, het vaccingeld en de bewering dat lichamen in het geheim zijn veranderd. Wat de documenten bewijzen, wat niet, en waarom het gat het echte verhaal is.</p>
+    <p class="label byline">Gebaseerd op de dossiers van Project Evidence Chain · Elke bewering beoordeeld van A tot E</p>
+  </section>
+</div>
+
+<div class="tape" aria-hidden="true"><span>Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕ Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕ Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕ Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕ Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕ Bewijsketen onvolledig ✕ Niet oversteken zonder document ✕</span></div>
+
+<div class="wide">
+  <figure style="margin:0">
+    <div class="chain" role="img" aria-label="De bewijsketen in vijf schakels. Merz zat de raad van toezicht van BlackRock Duitsland voor (gedocumenteerd). Hij ontmoette ministers (gedocumenteerd). Een link met een farmabeslissing ontbreekt. Pfizer en BioNTech financierden hun vaccin (gedocumenteerd). Een link met een veranderd persoon ontbreekt.">
+      <div class="link"><b>Merz voorzitter BlackRock Duitsland</b><small>M-01 · A</small></div>
+      <div class="link"><b>Ontmoet ministers</b><small>EC-09 · A</small></div>
+      <div class="link gap"><b>? Farmabeslissing</b><small>M-06 · C · geen document</small></div>
+      <div class="link"><b>Pfizer + BioNTech financieren vaccin</b><small>F-01 · A</small></div>
+      <div class="link gap"><b>? Veranderd persoon</b><small>B-01 · C · geen staal</small></div>
+    </div>
+    <figcaption class="figcap">Het hele verhaal op één rij. Achter de volle schakels staan primaire documenten. Achter de stippellijnen staat nog niets. De bewijs-ID's volgen het register in de bijlage.</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="Inhoud">
+    <a href="#rules"><span class="n">00</span><span class="t">Huisregels</span></a>
+    <a href="#chair"><span class="n">01</span><span class="t">De toezichtstoel</span></a>
+    <a href="#money"><span class="n">02</span><span class="t">Het geld dat echt was</span></a>
+    <a href="#thirteenf"><span class="n">03</span><span class="t">De 13F-illusie</span></a>
+    <a href="#access"><span class="n">04</span><span class="t">Toegang is geen inpalming</span></a>
+    <a href="#rumor"><span class="n">05</span><span class="t">Het lelijkste gerucht</span></a>
+    <a href="#biology"><span class="n">06</span><span class="t">De biologische bewering</span></a>
+    <a href="#archive"><span class="n">07</span><span class="t">Het archief van echte gruwelen</span></a>
+    <a href="#proof"><span class="n">08</span><span class="t">Wat het echt zou bewijzen</span></a>
+    <a href="#verdict"><span class="n">09</span><span class="t">De keten is onvolledig</span></a>
+    <a href="#register"><span class="n">A</span><span class="t">Bewijsregister</span></a>
+    <a href="#sources"><span class="n">B</span><span class="t">Bronnen</span></a>
+  </nav>
+</div>
+
+<main class="col">
+
+<section class="chapter" id="rules">
+  <div class="opener"><span class="num">00</span><h2>Huisregels</h2><span class="label">Woord van de redactie</span></div>
+
+  <p class="drop">Laten we één ding duidelijk maken voordat iemand geil wordt van een complot. Dit magazine haat twee dingen evenveel. Ten eerste macht die haar papieren verstopt. Ten tweede de luie klootzak op het internet die een rode lijn trekt tussen twee bekende namen, er een doodshoofd-emoji bij zet en dat journalistiek noemt.</p>
+
+  <p>Het is dezelfde ziekte. Allebei behandelen ze een gevoel als een feit. Machtige instellingen zeggen "vertrouw ons" en willen dat je stopt met vragen. De verkopers van netwerkdiagrammen zeggen "het is toch duidelijk" en willen dat je stopt met checken. Wij doen geen van beide.</p>
+
+  <p>Dus dit is de deal. Elke bewering in deze editie krijgt een score uit de dossiers van Project Evidence Chain waarop ze gebouwd is. Staat er een primair document achter, dan zie je het. Staat er niets achter, dan zie je dat ook, in het rood, aan het einde van elk hoofdstuk. We ronden nooit een C af naar een A omdat dat een betere kop zou opleveren.</p>
+
+  <div class="scale" aria-label="Beoordelingsschaal">
+    <div style="color:var(--gA)"><b>A</b><span>Gedocumenteerd. Primaire bron of sterke onafhankelijke bevestiging. Mag als feit gesteld worden.</span></div>
+    <div style="color:var(--gB)"><b>B</b><span>Plausibel, onbevestigd. Het mechanisme is mogelijk, het beslissende bewijs ontbreekt.</span></div>
+    <div style="color:var(--gC)"><b>C</b><span>Speculatief. Mogelijke verklaring zonder voldoende bewijs. Nooit gepubliceerd als beschuldiging.</span></div>
+    <div style="color:var(--gD)"><b>D</b><span>Tegengesproken. Sterk beschikbaar bewijs zegt iets anders.</span></div>
+    <div style="color:var(--gE)"><b>E</b><span>Fictie of symbool. Cultureel betekenisvol, bewijst niets wat gebeurd is.</span></div>
+  </div>
+
+  <p>Boven de schaal staat één regel: <strong>associatie is geen oorzaak, timing is geen bewijs en symboliek is geen bewijsmateriaal.</strong> Twee mensen in hetzelfde gebouw zitten niet in hetzelfde complot. Een datum die klopt is toeval, tot een document iets anders zegt.</p>
+
+  <blockquote class="pull">We verzinnen de ontbrekende schakel niet. We wijzen naar het gat en zeggen je precies wat het zou vullen.</blockquote>
+
+  <p>Dat is geen lafheid. Het is het enige wat de echte bevindingen kogelvrij maakt. Het gedocumenteerde deel van dit verhaal is lelijk genoeg: een man die betaald werd om deuren te openen voor de grootste vermogensbeheerder ter wereld, liep door heel wat regeringsdeuren, en het systeem was zo gebouwd dat niemand hoefde op te schrijven wat er gezegd werd. Blaas dat op met onzin en je geeft elke pr-afdeling in Berlijn een gratis excuus om alles weg te wuiven.</p>
+</section>
+
+<section class="chapter" id="chair">
+  <div class="opener"><span class="num">01</span><h2>De toezichtstoel</h2><span class="label">Wat Merz echt deed bij BlackRock, 2016 tot 2020</span></div>
+
+  <p class="drop">In maart 2016 kreeg Friedrich Merz, de voormalige CDU-fractieleider die Angela Merkel uit de eerste rij had geduwd, een nieuwe job. BlackRock, de vermogensbeheerder met meer geld onder beheer dan de meeste landen aan bbp hebben, maakte hem voorzitter van de raad van toezicht van <em>BlackRock Asset Management Deutschland AG</em>, de Duitse vennootschap. <span class="ev A">M-01 · A</span></p>
+
+  <p>Tot zover saaie bedrijfsfeiten. Het interessante deel is de tweede helft van de aankondiging. BlackRock zei dat Merz ook een bredere adviserende rol kreeg: relaties opbouwen met grote klanten, toezichthouders en Duitse overheidsinstanties. <span class="ev A">M-02 · A</span> Manager Magazin las dat en noemde hem waarvoor hij duidelijk was aangenomen: lobbyist. "Lobbyist" was niet zijn juridische titel. Maar als een bedrijf zegt dat de job van een voormalige topoliticus het cultiveren van toezichthouders en de overheid is, heb je geen rechtendiploma nodig om het te snappen.</p>
+
+  <p>Dit is een man die in 2018, midden in zijn race voor het CDU-voorzitterschap, zei dat hij zo'n miljoen euro per jaar verdiende, en in hetzelfde interview vertelde dat hij zich tot de "hogere middenklasse" rekende. Dat zegt genoeg over hoe comfortabel hij zich voelde bij het verschil tussen functietitel en functie.</p>
+
+  <h3>Wat het voorzitterschap is, en wat niet</h3>
+
+  <p>Nu het deel dat het internet altijd overslaat. Een Duitse <em>Aktiengesellschaft</em> heeft een structuur met twee lagen. De raad van bestuur leidt het bedrijf. De raad van toezicht houdt toezicht op de raad van bestuur. De voorzitter van de raad van toezicht plaatst geen trades, beheert geen portefeuilles en kiest geen aandelen voor fondsen. In dezelfde aankondiging zei BlackRock dat COO Harald Klug de dagelijkse leiding kreeg. <span class="ev D">M-03 · D</span></p>
+
+  <p>Elke meme die zegt "Merz was CEO van BlackRock" klopt dus niet. Hij was geen CEO van BlackRock Inc. en geen CEO van BlackRock Duitsland. <span class="ev D">M-04 · D</span> Wie die zin herhaalt, is geen waarheidszoeker. Die is de makkelijkst te ontkrachten persoon in de kamer.</p>
+
+  <p>En de rol was ook geen lege titel. Berichtgeving uit die tijd toont hem op klantevenementen, waaronder een Brexit-briefing met de voormalige Britse minister van Financiën George Osborne, en in een BlackRock-delegatie rond Davos. <span class="ev A">M-05 · A</span> Hij deed de job. De job was toegang.</p>
+
+  <p>Hij bleef zelfs in de raad zitten tijdens zijn kandidatuur voor het CDU-voorzitterschap in 2018, die hij verloor van Annegret Kramp-Karrenbauer, en verliet het Duitse voorzitterschap eind maart 2020. Onthoud die datum. Mensen gaan proberen er heel veel gewicht aan te hangen.</p>
+
+  <div class="verdict">
+    <div class="yes"><h4>Dit bewijst</h4><ul><li>Merz zat van maart 2016 tot maart 2020 de raad van toezicht van BlackRocks Duitse vennootschap voor.</li><li>Zijn opdracht omvatte uitdrukkelijk relaties met klanten, toezichthouders en overheid.</li><li>Hij was actief op klant- en netwerkevenementen.</li></ul></div>
+    <div class="no"><h4>Dit bewijst niet</h4><ul><li>Dat hij BlackRock leidde, in Duitsland of elders.</li><li>Dat hij een belegging koos, in farma of iets anders.</li><li>Dat zijn relaties een overheidsbeslissing veranderden.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Resterend gat:</b> er is geen gewaarmerkt uittreksel uit het Handelsregister, geen statuten en geen notulen van de raad voor 2016–2020 opgehaald. De rol is sterk bevestigd door bronnen uit die tijd, maar zijn precieze wettelijke bevoegdheden zijn nog niet gereconstrueerd.</p>
+</section>
+
+<section class="chapter" id="money">
+  <div class="opener"><span class="num">02</span><h2>Het geld dat echt was</h2><span class="label">Waar het vaccingeld echt vandaan kwam</span></div>
+
+  <p class="drop">Wie wil weten wie het vaccin van Pfizer en BioNTech betaalde, heeft geen klokkenluider nodig. Een persbericht, een bankafschrift en wat geduld volstaan. Het geldspoor is openbaar, en het loopt niet via BlackRock.</p>
+
+  <ol class="timeline">
+    <li class="merz"><time>Maart 2016</time>Merz wordt voorzitter van de raad van toezicht van BlackRock Asset Management Deutschland AG.</li>
+    <li class="merz"><time>17 okt. 2017 – 12 sep. 2018</time>Vier gerapporteerde ontmoetingen met hoge federale functionarissen in zijn BlackRock-functie (hoofdstuk 04).</li>
+    <li><time>17 maart 2020</time>Pfizer en BioNTech kondigen hun samenwerking rond een COVID-19-vaccin aan.</li>
+    <li class="merz"><time>Eind maart 2020</time>Merz verlaat het voorzitterschap bij BlackRock Duitsland.</li>
+    <li><time>9 april 2020</time>Pfizer publiceert de financiële voorwaarden.</li>
+    <li><time>April 2020</time>Het Duitse Paul-Ehrlich-Institut keurt BioNTechs eerste Duitse proef goed. De FAQ zegt 20 april, de publieke aankondiging is gedateerd 22 april.</li>
+    <li><time>11 juni 2020</time>De Europese Investeringsbank tekent tot €100 miljoen schuldfinanciering met BioNTech.</li>
+    <li><time>Juli 2020</time>De grote fase 2/3-studie loopt.</li>
+    <li><time>September 2020</time>Duitse federale steun tot ongeveer €375 miljoen aan BioNTech.</li>
+    <li><time>21 december 2020</time>Het EMA beveelt voorwaardelijke vergunning voor Comirnaty aan.</li>
+    <li class="merz"><time>6 mei 2025</time>Merz wordt bondskanselier.</li>
+  </ol>
+  <p class="figcap">Gele bolletjes zijn Merz-gebeurtenissen. Kijk hoe weinig de twee sporen elkaar raken: één overlap van ongeveer twee weken in maart 2020.</p>
+
+  <h3>Pfizer naar BioNTech</h3>
+  <p>Op 9 april 2020 zei Pfizer dat het BioNTech $185 miljoen vooraf betaalde, waarvan ongeveer $113 miljoen als aandeleninvestering, met tot $563 miljoen extra aan mogelijke mijlpaalbetalingen. De ontwikkelingskosten zouden uiteindelijk 50/50 gedeeld worden, maar Pfizer schoot tijdens de ontwikkeling 100% voor en BioNTech zou zijn helft later terugbetalen. <span class="ev A">F-01 · F-02 · F-03 · A</span> Dat komt rechtstreeks uit Pfizers eigen persbericht van toen.</p>
+
+  <h3>Brussel naar BioNTech</h3>
+  <p>Op 11 juni 2020 tekende de EIB een overeenkomst voor tot €100 miljoen schuldfinanciering voor het BNT162-programma en uitbreiding van de productie, uitbetaald in twee schijven van €50 miljoen gekoppeld aan mijlpalen. <span class="ev A">F-04 · A</span> Een Europese publieke bank, gedocumenteerd op haar eigen website.</p>
+
+  <h3>Berlijn naar BioNTech</h3>
+  <p>In september 2020 beloofde de Duitse regering tot ongeveer €375 miljoen. Dat is breed bericht, maar de originele subsidiebeschikking van het BMBF werd niet opgehaald voor het dossier, dus het blijft B tot iemand de echte papieren boven haalt. <span class="ev B">F-05 · B*</span></p>
+
+  <h3>En het publiek betaalde de rest</h3>
+  <p>Zoom uit en het beeld wordt nog pijnlijker voor de "Wall Street heeft het vaccin gebouwd"-club. Een BMJ-studie uit 2023 vond dat de Amerikaanse publieke investering in mRNA-COVID-19-vaccins minstens $31,9 miljard bedroeg. Een studie in JAMA Network Open vond dat publieke bronnen de meeste geregistreerde COVID-19-studies van fase 1–3 financierden die in 2020–2021 startten, vóór de industrie. Vóór de pandemie waren de grootste eigenaars van BioNTech het familiekantoor van de broers Strüngmann, geen indexfonds.</p>
+
+  <blockquote class="pull">Het vaccin werd gebouwd met bedrijfsgeld en een berg publiek geld. De vermogensbeheerder had concertkaartjes. De muziek schreef hij niet.</blockquote>
+
+  <p>De proef zelf heeft een sponsor, en die staat in de FDA-documenten: Pfizer en BioNTech. De FDA-briefing van december 2020 beschrijft een gerandomiseerde, placebogecontroleerde fase 2/3-studie met ongeveer 44.000 deelnemers. BlackRock komt in geen enkel sponsor- of protocoldocument voor. <span class="ev A">T-01 · A</span> <span class="ev C">T-02 · C</span></p>
+
+  <div class="verdict">
+    <div class="yes"><h4>Dit bewijst</h4><ul><li>Pfizer schoot de ontwikkelingskosten voor en investeerde ~$113m in aandelen van BioNTech.</li><li>De EIB leende tot €100m; Duitsland gaf tot ~€375m.</li><li>Pfizer en BioNTech sponsorden de proef.</li></ul></div>
+    <div class="no"><h4>Dit bewijst niet</h4><ul><li>Enige BlackRock-financiering van BNT162.</li><li>Enige rol van Merz in deze deals.</li><li>Wat dan ook op basis van de overlap in maart 2020.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Resterend gat:</b> de originele BMBF-beschikking en het uitbetalingsdossier van de EIB (mijlpalen → betaaldata → werkpakketten) zijn niet opgehaald.</p>
+</section>
+
+<section class="chapter" id="thirteenf">
+  <div class="opener"><span class="num">03</span><h2>De 13F-illusie</h2><span class="label">Waarom "BlackRock had Pfizer" minder betekent dan je denkt</span></div>
+
+  <p class="drop">Hier verliest de netwerkdiagramclub echt de draad. Iemand opent een grafiek van aandeelhouders, ziet BlackRock bovenaan bij Pfizer, ziet de naam van Merz naast BlackRock en verbindt de punten. Zaak gesloten, toch?</p>
+
+  <p>Fout. Laten we het echte document lezen.</p>
+
+  <p>Een Form 13F is een kwartaalaangifte die grote Amerikaanse vermogensbeheerders bij de SEC indienen, met de aandelenposities die ze rapporteren. BlackRocks gecombineerde aangifte voor 2020 noemt <em>BlackRock Asset Management Deutschland AG</em> in München bij de opgenomen beheerders. <span class="ev A">EC-07 · A</span> Tot zover, verbonden.</p>
+
+  <p>Maar dezelfde aangifte zegt in klare taal dat BlackRock, Inc. een moederholding is die <strong>geen beleggingsbevoegdheid uitoefent</strong> over posities die haar operationele dochters beheren. Ze rapporteert ze omdat ze een meldplicht heeft, niet omdat ze ze koos. <span class="ev A">EC-08 · A</span></p>
+
+  <blockquote class="pull">De 13F-aangifte zegt zelf dat de moeder de aandelen niet koos. Wie er nog mee zwaait als bewijs dat Merz het vaccinprogramma leidde, kan niet lezen of wil niet.</blockquote>
+
+  <h3>De cijfers, met het waarschuwingslabel erop</h3>
+  <p>Gestructureerde pagina's van derden die 13F-data tonen, geven deze posities. Ze moeten nog getoetst worden aan de onderliggende SEC-regels voordat iemand ze gebruikt voor juridische of eigendomsclaims. <span class="ev A">EC-11 · A (zoals gerapporteerd)</span></p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Effect</th><th>Rapporterende entiteit</th><th>Datum</th><th>Aandelen</th><th>Gerapporteerde waarde</th></tr></thead>
+    <tbody>
+      <tr><td>BioNTech (BNTX)</td><td>BlackRock Finance, Inc.</td><td class="num">31 dec 2020</td><td class="num">668.546</td><td class="num">$54,5m</td></tr>
+      <tr><td>Pfizer (PFE)</td><td>BlackRock Finance, Inc.</td><td class="num">30 sep 2020</td><td class="num">414.768.435</td><td class="num">$15,22 mld (7,3%)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">Verschillende data. Niet optellen en niet als één momentopname behandelen. Bron: PortfolioSavvy-weergave van SEC-13F-data; de primaire aangiftes moeten nog bekeken worden.</p>
+
+  <p>Kijk even naar die cijfers. Een Pfizer-positie van $15 miljard krijg je als je een groot deel van 's werelds indexfondsen beheert en Pfizer een van de grootste bedrijven in de index is. Dat is gewone portefeuilleblootstelling, en het is de eerste alternatieve verklaring die elke eerlijke onderzoeker moet uitsluiten. De BioNTech-positie, ongeveer $54 miljoen eind 2020, is een afrondingsfout voor een firma van die omvang.</p>
+
+  <h3>Vijf aparte beweringen die zich als één voordoen</h3>
+  <p>De meme verkoopt dit als één feit. Het zijn er vijf, en elk heeft een eigen document nodig:</p>
+
+  <ol class="ladder">
+    <li>Een BlackRock-fonds had aandelen Pfizer of BioNTech <span class="stamp ok">Gerapporteerd</span></li>
+    <li>Merz koos die aandelen <span class="stamp">Geen document</span></li>
+    <li>Het geld ging naar Pfizer of BioNTech <span class="stamp">Geen document</span></li>
+    <li>Dat geld betaalde een specifieke proef <span class="stamp">Geen document</span></li>
+    <li>Merz controleerde de proef <span class="stamp">Geen document</span></li>
+  </ol>
+
+  <p>Bij schakel drie breekt het het hardst. Als een fonds aandelen op de beurs koopt, gaat het geld naar wie de aandelen verkocht, niet naar het bedrijf. Om te tonen dat BlackRock onderzoek financierde, heb je een primaire uitgifte, een lening, een underwritingmandaat of een projectcontract nodig. Voor BNT162 heeft niemand er een gevonden. <span class="ev C">F-06 · C</span> <span class="ev C">H-02 · C</span></p>
+
+  <div class="verdict">
+    <div class="yes"><h4>Dit bewijst</h4><ul><li>BlackRocks Duitse vennootschap maakte deel uit van de 13F-rapportering van de groep.</li><li>Er bestonden door BlackRock gerapporteerde posities in Pfizer en BioNTech op de vermelde data.</li></ul></div>
+    <div class="no"><h4>Dit bewijst niet</h4><ul><li>Wie de posities koos, of waarom.</li><li>Dat het BlackRocks eigen kapitaal was.</li><li>Dat er onderzoek mee gefinancierd werd, of dat Merz eraan zat.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Resterend gat:</b> een reconstructie per kwartaal van 2016 tot 2021 uit EDGAR 13F, N-PORT en fondsrapporten, ingedeeld als passieve index, actieve selectie, institutioneel mandaat of niet vastgesteld. Tot dan verwart elk groot "BlackRock bezit X"-getal meer dan het onthult.</p>
+</section>
+
+<section class="chapter" id="access">
+  <div class="opener"><span class="num">04</span><h2>Toegang is geen inpalming</h2><span class="label">De ontmoetingen, en de verslagen die niemand moest bijhouden</span></div>
+
+  <p class="drop">Nu komen we bij het deel waar je echt kwaad van zou moeten worden.</p>
+
+  <p>In januari 2019 meldde Der Spiegel, op basis van een dpa-bericht over het antwoord van de federale regering op een parlementaire vraag, dat Merz vier keer hoge federale functionarissen had ontmoet in zijn BlackRock-functie. <span class="ev A">EC-09 · A</span></p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Datum</th><th>Wie</th><th>Gerapporteerde context</th></tr></thead>
+    <tbody>
+      <tr><td class="num">17 okt 2017</td><td>Sigmar Gabriel, minister van Buitenlandse Zaken en vicekanselier</td><td>Merz als voorzitter van de raad van toezicht van de Duitse BlackRock-dochter</td></tr>
+      <tr><td class="num">7 mrt 2018</td><td>Sigmar Gabriel</td><td>Zelfde functie</td></tr>
+      <tr><td class="num">26 apr 2018</td><td>Helge Braun, hoofd van de Kanselarij</td><td>In de marge van een vergadering van de CDU-Wirtschaftsrat</td></tr>
+      <tr><td class="num">12 sep 2018</td><td>Minister van Financiën Olaf Scholz en staatssecretaris Jörg Kukies</td><td>"Kwesties van de financiële markten"</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Een later regeringsantwoord, Bundestag-document 19/18436, voegt meer toe: een discussie van de Konrad-Adenauer-Stiftung met Peter Altmaier op 12 december 2018 over "algemene zaken", een telefoongesprek met Kukies op 21 januari 2020 en een gesprek Merz–Kukies over "actuele kwesties van de financiële markten" op 20 maart 2020. Geen enkele vermelding noemt BioNTech, Pfizer of een farmaonderwerp.</p>
+
+  <p>"Algemene zaken." "Kwesties van de financiële markten." Dat is het volledige publieke verslag van wat de man van 's werelds grootste vermogensbeheerder in Duitsland besprak met de mensen die het land bestuurden. Geen notulen. Geen nota's. Een onderwerpregel die op een bierviltje past.</p>
+
+  <blockquote class="pull">Het schandaal is geen geheim vaccinplan. Het is dat het systeem zo gebouwd was dat niemand iets hoefde op te schrijven.</blockquote>
+
+  <h3>Het register dat te laat kwam</h3>
+  <p>De Duitse federale lobbyregisterwet dateert van 16 april 2021 en trad in werking op 1 januari 2022. De eerste registerinschrijving van BlackRock Asset Management Deutschland AG is gedateerd 14 maart 2022. Bijna twee jaar nadat Merz vertrok. <span class="ev E">EC-10 · tegengesproken als tijdsclaim</span> Het register kan dus niet zeggen wat hij deed, en zijn stilte over 2016–2020 bewijst niets, in geen enkele richting. Het EU-transparantieregister werd pas in 2021 de facto verplicht voor rechtstreekse contacten.</p>
+
+  <p>Voor de jaren die ertoe doen, vroegen de regels niet om het papieren spoor dat je nodig hebt. Dat is de echte aanklacht. Niet tegen één man, maar tegen een politieke cultuur die een voormalige partijleider voor een financiële reus door de gangen liet lopen en een onderwerpregel van één zin transparantie noemde.</p>
+
+  <h3>Onze eigen woede op de proef gesteld</h3>
+  <p>Nu het koude water, zoals beloofd. Een ontmoeting is geen beslissing. Een onderwerpregel is geen beleidswijziging. Geen enkel document toont dat een functionaris een BlackRock-standpunt overnam of een beslissing veranderde door Merz. <span class="ev C">M-06 · C</span> <span class="ev E">EC-12 · niet onderbouwd</span> Een onderzoeksnota in het dossier zocht specifiek naar een link tussen zijn BlackRock-rol en Duitse consultaties over farmabeleid, en vond niets. Het enige wat ze vond, was zijn veel eerdere, bekende optreden op een werkgeversgezind liberaliseringsevenement in 2003.</p>
+
+  <div class="verdict">
+    <div class="yes"><h4>Dit bewijst</h4><ul><li>Merz had herhaaldelijk toegang op het hoogste regeringsniveau in zijn BlackRock-functie.</li><li>Het publieke verslag van wat er gezegd werd, is bijna leeg.</li><li>Het lobbyregister bestond nog niet.</li></ul></div>
+    <div class="no"><h4>Dit bewijst niet</h4><ul><li>Wat er echt gezegd werd.</li><li>Dat er daardoor beleid veranderde.</li><li>Enig farma- of vaccinonderwerp.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Resterend gat:</b> de onderliggende Bundestag-vraag en het antwoord, plus agenda's van ministeries, bezoekerslijsten, briefings en correspondentie van 1 maart 2016 tot 31 maart 2020. Dat ligt één IFG-verzoek ver. Zie hoofdstuk 08.</p>
+</section>
+
+<section class="chapter" id="rumor">
+  <div class="opener"><span class="num">05</span><h2>Het lelijkste gerucht</h2><span class="label">We hebben het nagetrokken zodat jij het niet hoeft te herhalen</span></div>
+
+  <p class="drop">Ergens in dit ecosysteem circuleert het verhaal dat een anonieme getuige zegt dat Merz betrokken was bij "experimenten op mensen", samen met de oprichters van BioNTech, Uğur Şahin en Özlem Türeci. We hebben het uitgezocht.</p>
+
+  <p>Er is geen originele verklaring. Geen opname. Geen datum, geen plaats, geen benoemd slachtoffer, geen protocol, geen document. Niets.</p>
+
+  <p>Wat het dossier wel toont, is openbaar en eerlijk gezegd banaal. Als kanselier hield Merz de lofrede toen Şahin en Türeci op 10 juni 2025 in Berlijn de Duitse Nationale Prijs kregen. Op 9 december 2025 bezocht hij het TRON-onderzoeksinstituut in Mainz, dat zij mee oprichtten, en zei hij dat hij al meermaals met hen over hun werk had gesproken. Dat is een politicus die beroemde wetenschappers eert en biotech steunt. Elke regeringsleider doet dat.</p>
+
+  <p>Het proefkader dat hij zogezegd leidde, is intussen in de omgekeerde richting gedocumenteerd. Het PEI keurde de Duitse proef goed na een afweging van voordelen en risico's en vereist een gunstig advies van een ethisch comité. De proefregistraties eisen een ondertekende geïnformeerde toestemming vóór elke proefhandeling. Dat bewijst niet dat elke toestemming op elke site perfect was. Het is wel een papieren spoor, en het gerucht heeft er geen.</p>
+
+  <p>Eén detail verdient controle in plaats van geroep: het PEI zegt dat de eerste beoordeling van BioNTechs aanvraag vier werkdagen duurde, verklaard door extra personeel, voorafgaand overleg en vooraf beoordeelde documenten. Snel is niet hetzelfde als frauduleus. Testen doe je met het beoordelingsdossier, niet met een onderbuikgevoel.</p>
+
+  <p>Het oordeel van het dossier: 95% zekerheid dat de beschuldiging door geen enkel publiek bewijs wordt gestaafd. Dat is geen claim dat er nooit ergens iets ergs gebeurd is. Het is een vaststelling dat deze specifieke beschuldiging nergens op steunt. <span class="ev C">geen bevestiging</span></p>
+
+  <blockquote class="pull">Een anonieme beschuldiging van medische misdaden tegen een met naam genoemd mens, zonder enig detail, is geen spoor. Het is een risico.</blockquote>
+
+  <p class="gapline"><b>Resterend gat:</b> als de getuige echt bestaat, begint alles bij het originele materiaal: volledige verklaring, herkomst, datum, specifieke ingreep, plaats, vermeend slachtoffer en hoe de getuige het weet. Zonder dat kan de bewering niet getest worden, en mag ze alleen als onbevestigd gedrukt worden.</p>
+</section>
+
+<section class="chapter" id="biology">
+  <div class="opener"><span class="num">06</span><h2>De biologische bewering</h2><span class="label">"Er is iets in mijn DNA gestopt." Hoe je het zou weten.</span></div>
+
+  <p class="drop">Dit is het deel dat mensen in hun lijf voelen, dus het verdient het meeste respect en de strengste maatstaf. De bewering in haar scherpste vorm: het DNA van een persoon werd zonder toestemming veranderd, misschien met niet-menselijk genetisch materiaal, misschien als deel van een programma.</p>
+
+  <p>En dit zegt bijna niemand hardop: dit is een van de <em>best</em> toetsbare beweringen in dit hele verhaal. Een ontmoeting kan uit de archieven verdwijnen. Een gesprek kan zonder notulen blijven. Maar DNA is een tekst van ongeveer drie miljard letters. Als iemand er een vreemd hoofdstuk in geplakt heeft, kun je in principe de letters aanwijzen, de naad waar menselijke sequentie overgaat in vreemde sequentie, en de exacte plek op het chromosoom.</p>
+
+  <p>Tot nu toe is in geen enkel dossier casusspecifiek bewijs van die soort aangeleverd. Geen sequencingresultaat, geen pathologieverslag, geen behandelingsdossier, geen proef-ID, geen lotnummer, geen vectorsequentie, geen integratieplaats. <span class="ev C">B-01 · C</span> Dat betekent niet dat onverklaarde klachten niet echt zijn of geen arts verdienen. Het betekent dat de hypothese op C staat tot er materiaal is om te testen.</p>
+
+  <h3>Wat de wetenschap zegt, zonder spin</h3>
+  <p>Genetische modificatie bij mensen is echt. Casgevy, een CRISPR-therapie die de eigen bloedvormende stamcellen van een patiënt buiten het lichaam bewerkt, kreeg op 9 februari 2024 een EU-vergunning. Mens-dier-chimere embryo's zijn in labo's gemaakt, gepubliceerd in Cell in 2017, met primatenonderzoek in 2021. Niets daarvan is sciencefiction. <span class="ev A">A</span></p>
+
+  <p>Maar het gebeurt allemaal in het openbaar, met toestemmingsformulieren, ethische commissies, registers en gepubliceerde studies. En een chimera betekent verschillende cellen naast elkaar, niet dierlijke genen in menselijke chromosomen geplakt. Woorden doen hier ertoe.</p>
+
+  <p>Over mRNA-vaccins specifiek: het EMA beschrijft dat het mRNA van Comirnaty cellen tijdelijk instructies geeft en daarna wordt afgebroken. Eén labostudie uit 2022 (Aldén et al.) vond van het vaccin afgeleid DNA in een menselijke levercellijn in een petrischaal, en schreef uitdrukkelijk dat onbekend was of het in het genoom integreerde. Grote overzichtsstudies zeggen dat mRNA werkt zonder de celkern binnen te gaan. "Een product bevat genetisch materiaal" is niet hetzelfde als "het genoom van de ontvanger werd veranderd". Voor dat tweede heb je rechtstreeks genomisch bewijs nodig. Niets anders telt.</p>
+
+  <h3>De valkuilen</h3>
+  <p>Eén sequencing-read die op een dier, bacterie of virus lijkt, bewijst niets. Labo's zitten vol niet-menselijk DNA. Je lichaam zit vol microben. Sequencers maken artefacten; één bekend artefact op sommige Illumina-toestellen bootst zelfs mutaties met lage frequentie na. Eén rare read is het begin van een onderzoek, niet het einde. <span class="ev D">B-02 · D</span> Symptomen alleen kunnen geen DNA-splicing bewijzen. En zelfs een echte, bevestigde bevinding zou niet zeggen wie het deed. <span class="ev D">B-03 · D</span></p>
+
+  <p class="gapline"><b>Resterend gat:</b> alles. Een medisch dossier van de gebeurtenis in kwestie, een biologisch zinvol weefsel, sequencing, een overgang tussen menselijk en vreemd DNA, orthogonale validatie en een tweede onafhankelijk labo. Hoofdstuk 08 heeft het volledige protocol.</p>
+</section>
+
+<section class="chapter" id="archive">
+  <div class="opener"><span class="num">07</span><h2>Het archief van echte gruwelen</h2><span class="label">Hoe echte programma's zonder toestemming eruitzien als de dossiers opengaan</span></div>
+
+  <p class="drop">Wie je zegt dat "instellingen zoiets nooit zouden doen", liegt of weet niet waarover hij praat. Ze deden het. Herhaaldelijk. En we weten precies hoe we het weten.</p>
+
+  <p><strong>Tuskegee, 1932–1972.</strong> De Amerikaanse Public Health Service keek veertig jaar toe hoe zwarte mannen met syfilis onbehandeld bleven, zonder geïnformeerde toestemming, en hield effectieve behandeling achter toen penicilline al bestond. De CDC documenteert het op haar eigen website.</p>
+
+  <p><strong>Guatemala, 1946–1948.</strong> Door de VS gefinancierde onderzoekers besmetten gevangenen, soldaten en psychiatrische patiënten opzettelijk met soa's, zonder toestemming. Een andere, actievere vorm van misbruik dan Tuskegee.</p>
+
+  <p><strong>De stralingsexperimenten.</strong> Officiële Amerikaanse archieven documenteren patiënten die plutonium of uranium ingespoten kregen zonder overtuigend bewijs dat ze wisten dat ze proefpersonen waren. In één briefwisseling werd aangeraden bepaalde plutoniumgegevens uit ziekenhuisdossiers te houden.</p>
+
+  <p><strong>MKUltra.</strong> Het mind-controlprogramma van de CIA. Directeur Richard Helms liet de dossiers in 1973 vernietigen. De Senaat hield in 1977 toch een hoorzitting, omdat ongeveer 20.000 pagina's financiële en administratieve stukken in de verkeerde archiefkast overleefd hadden.</p>
+
+  <blockquote class="pull">Macht doet monsterlijke dingen. Juist daarom hebben beschuldigingen bewijs nodig: de echte monsters werden met papier betrapt.</blockquote>
+
+  <p>Kijk hoe elk van deze zaken bewezen werd. Niet door een film die erop leek. Niet door een gevoel. Door protocollen, deelnemerslijsten, financiële stukken, briefwisseling, getuigenissen en officiële onderzoeken. Zelfs MKUltra, waar bewust versnipperd werd, viel door documenten die de versnipperaar overleefden.</p>
+
+  <p>En die schandalen leverden iets echts op: de National Research Act, het Belmont-rapport, ethische commissies en geïnformeerde toestemming als wet. De middelen waarmee we vandaag beweringen zoals die in deze editie controleren, bestaan <em>omdat</em> mensen die dossiers naar het licht sleurden.</p>
+
+  <p>Geschiedenis snijdt dus aan twee kanten. Ze maakt korte metten met "dat zouden ze nooit doen". Ze maakt ook korte metten met "Tuskegee is gebeurd, dus mijn theorie is bewezen". Geen van beide volgt. De juiste les past op een sticker: <strong>macht verdient controle, en beschuldigingen verdienen bewijs.</strong></p>
+
+  <p>Hetzelfde geldt voor cultuur. Frankenstein, Doctor Moreau, Jurassic Park, Gattaca, BioShock: geweldige verhalen, nuttige metaforen, soms goede bronnen van vragen. Het zijn geen patiëntendossiers, sequencingdata of financieringscontracten. <span class="ev E">C-01 · E</span></p>
+
+  <p class="gapline"><b>Resterend gat:</b> voor de hedendaagse beweringen in deze editie bestaat nog geen vergelijkbaar primair materiaal. Geen protocol, geen deelnemerslijst, geen financieel stuk, geen officiële getuigenis.</p>
+</section>
+
+<section class="chapter" id="proof">
+  <div class="opener"><span class="num">08</span><h2>Wat het echt zou bewijzen</h2><span class="label">Een veldhandboek voor wie de gaten wil dichten</span></div>
+
+  <p class="drop">Genoeg over wat ontbreekt. Zo ga je het halen. Daar is geen hacker of lek voor nodig. Wel brieven, formulieren en koppigheid.</p>
+
+  <h3>Spoor één: de institutionele keten</h3>
+  <p>Om invloed te bewijzen heb je zes schakels nodig, elk op papier: (1) het echte fonds en de beheerder die een effect hield; (2) het mandaat en wie handels- of stemrecht had; (3) communicatie of instructies van een met naam genoemde persoon; (4) de specifieke beslissing over onderzoek, regelgeving, beleid of aankoop; (5) de verantwoordelijke instelling en beslisser; en (6) bewijs uit die tijd dat het gedrag van de persoon de beslissing veranderde. Breek één schakel en de bewering verzwakt. Vind ze alle zes en je hebt een verhaal dat niemand nog kan afmaken.</p>
+
+  <div class="box"><span class="label">Sjabloon · Duits verzoek op basis van de openbaarheidswet (IFG)</span>
+  Stuur apart naar het Bundeskanzleramt, het ministerie van Financiën en het ministerie van Economie, per e-mail of brief. Smal wint van breed. "Geef me alles over BlackRock" levert niets op.
+  <pre>Alle Kalendereinträge, Besucherregistrierungen, Gesprächsvermerke und Korrespondenz zwischen dem 1. März 2016 und dem 31. März 2020, in denen Friedrich Merz in seiner Funktion für die BlackRock Asset Management Deutschland AG vorkommt.</pre></div>
+
+  <p>Daarna: het Handelsregister en de Bundesanzeiger voor de structuur van de raad en de jaarverslagen; EDGAR voor elke 13F-, N-PORT- en 13G-aangifte van 2016 tot 2021; historische data van het EU-transparantieregister en agenda's van commissarissen (DG FISMA, DG COMP, DG SANTE); en het projectregister van de EIB voor de BioNTech-lening.</p>
+
+  <h3>Spoor twee: de biologische keten</h3>
+  <p>Voor wie gelooft dat dit hem of haar overkomen is: de volgorde telt meer dan het budget. Begin bij het dossier, niet bij een DNA-kit van het internet.</p>
+
+  <div class="protocol" aria-label="Volgorde van het protocol"><span>Detecteren</span><span>Lokaliseren</span><span>Valideren</span><span>Repliceren</span><span>Oorzaak</span><span>Toeschrijven</span></div>
+
+  <ol class="ladder">
+    <li>Vraag je volledige medische dossier op voor de gebeurtenis in kwestie: medicatie- en toedieningsregister met lotnummers, toestemmingsformulieren, operatie- en anesthesieverslagen, pathologie, eventuele proef-ID. Vraag om documenten, niet om bekentenissen. <span class="stamp ok">Stap één</span></li>
+    <li>Ga naar een klinisch geneticus in een erkend centrum. In België is het Centrum Menselijke Erfelijkheid van UZ Leuven een van de acht erkende centra, met ISO 15189-accreditatie. Vraag welk weefsel informatief zou zijn. <span class="stamp ok">Stap twee</span></li>
+    <li>Short-read whole-genome sequencing voor een brede blik; long-read sequencing om structurele veranderingen te overbruggen en een overgang tussen menselijk en vreemd DNA te vinden. <span class="stamp">Labo</span></li>
+    <li>Bevestig elke kandidaat met junctie-PCR, Sanger-sequencing en ddPCR. Eén techniek bewijst op zichzelf niets. <span class="stamp">Valideren</span></li>
+    <li>Een tweede, onafhankelijk labo dat met een eigen, apart verzegeld staal werkt, met gelogde bewijsketen. <span class="stamp">Repliceren</span></li>
+    <li>Pas dan: de handtekening koppelen aan product, lot, datum, plaats en persoon, en tonen dat toestemming ontbrak. <span class="stamp">Toeschrijven</span></li>
+  </ol>
+
+  <p>Een sterke bewering klinkt zo: "In weefsel X zit DNA-sequentie Y, buiten normale menselijke variatie, fysiek verbonden met chromosoom Z via junctie J, gereproduceerd door twee onafhankelijke labo's." Dat is falsifieerbaar. "Ik ben gehybridiseerd" is dat niet. De ene versie wordt in een rechtszaal serieus genomen. Met de andere word je uitgelachen.</p>
+
+  <p>Belgische wegen als dossiers geweigerd worden: de patiëntenrechtenkanalen via de FOD Volksgezondheid; het FAGG bij vermoede proeven en bijwerkingen, via de specifieke meldformulieren (algemene klachten ouder dan een jaar lopen niet via de standaardroute); en de Gegevensbeschermingsautoriteit (GBA) als gezondheidsgegevens worden achtergehouden. Bewaar originelen: EML-bestanden, brieven en ontvangstbewijzen, niet alleen gekopieerde tekst.</p>
+
+  <p class="gapline"><b>Resterend gat:</b> dit hoofdstuk is de lijst met gaten. Elke stap hierboven is een document of een test die nog niet gebeurd is.</p>
+</section>
+
+<section class="chapter" id="verdict">
+  <div class="opener"><span class="num">09</span><h2>De keten is onvolledig</h2><span class="label">Slotpleidooi</span></div>
+
+  <p class="drop">Waar staan we dan? Bij twee sporen, en we laten ze niet in elkaar overlopen voor een goedkoop einde.</p>
+
+  <p><strong>Het institutionele spoor staat.</strong> Friedrich Merz, nu bondskanselier van Duitsland, was vier jaar lang voorzitter en deuropener van 's werelds grootste vermogensbeheerder in Duitsland. In die functie ontmoette hij een vicekanselier, het hoofd van de Kanselarij en de minister van Financiën. Het publieke verslag van wat ze bespraken, beperkt zich tot een paar onderwerpregels. Het lobbyregister dat het had kunnen vastleggen, kwam twee jaar na zijn vertrek. Dat is allemaal score A, en het is allemaal een terecht schandaal over hoe geld in Berlijn met macht praat.</p>
+
+  <p><strong>Het biologische spoor staat niet, nog niet.</strong> Er is geen document dat Merz of BlackRock verbindt met een vaccinbeslissing, een proef of een financiering. Er is geen staal, sequentie of dossier dat toont dat iemands DNA zonder toestemming werd veranderd. Die beweringen staan op C. Ze kunnen bewegen. Met papier en sequentiedata, niet met volume.</p>
+
+  <blockquote class="pull">Twee echte netwerken. Geen bewezen brug. Dat is geen doofpot en geen vrijspraak. Het is het werk dat nog niemand gedaan heeft.</blockquote>
+
+  <p>Als je hier kwam om de puntjes verbonden te zien: sorry. De puntjes verbinden zichzelf niet, en wie het zonder documenten voor je doet, verkoopt je iets. Als je wilde weten wat echt is, hier is het: de toegang was echt, de ondoorzichtigheid was echt, het geldspoor was openbaar, en de ontbrekende schakels hebben namen, adressen en dossiernummers. Ga ze halen.</p>
+
+  <h3>Open vragen</h3>
+  <ul>
+    <li>Welke wettelijke bevoegdheden had Merz in de raad van toezicht van BlackRock Duitsland? (Handelsregister)</li>
+    <li>Welke BlackRock-fondsen hadden van 2016 tot 2021 Pfizer en BioNTech, onder welke mandaten? (EDGAR, N-PORT)</li>
+    <li>Wat werd er echt besproken bij de zeven gedocumenteerde regeringscontacten? (IFG-verzoeken)</li>
+    <li>Wat zijn de voorwaarden van de originele BMBF-subsidie van €375m? (BMBF)</li>
+    <li>Wat zegt het beoordelingsdossier van het PEI over de beoordeling van vier dagen? (PEI)</li>
+    <li>Heeft iemand op sequentieniveau, onafhankelijk gerepliceerd bewijs van genetische verandering zonder toestemming? (Klinische genetica)</li>
+  </ul>
+</section>
+
+<section class="chapter" id="register">
+  <div class="opener"><span class="num">A</span><h2>Bewijsregister</h2><span class="label">Samengevoegd uit de dossiers van Project Evidence Chain</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>ID</th><th>Bewering</th><th>Score</th><th>Wat ontbreekt</th></tr></thead>
+    <tbody>
+      <tr><td class="num">M-01</td><td>Merz was voorzitter van de raad van toezicht van BAM Deutschland AG</td><td><span class="ev A">A</span></td><td>Registeruittreksel voor een sluitende keten</td></tr>
+      <tr><td class="num">M-02</td><td>Zijn opdracht omvatte klanten, toezichthouders, overheid</td><td><span class="ev A">A</span></td><td>Individuele contacten</td></tr>
+      <tr><td class="num">M-03</td><td>Hij leidde de dagelijkse Duitse activiteiten</td><td><span class="ev D">D</span></td><td>—</td></tr>
+      <tr><td class="num">M-04</td><td>Hij was CEO van BlackRock Inc.</td><td><span class="ev D">D</span></td><td>—</td></tr>
+      <tr><td class="num">M-05</td><td>Hij was actief op klant- en netwerkevenementen</td><td><span class="ev A">A</span></td><td>Volledige agenda</td></tr>
+      <tr><td class="num">M-06</td><td>Hij beïnvloedde een concrete farmabeslissing</td><td><span class="ev C">C</span></td><td>Verslag, correspondentie, beslissing</td></tr>
+      <tr><td class="num">EC-09</td><td>Vier ontmoetingen in 2017–2018 met hoge functionarissen</td><td><span class="ev A">A</span></td><td>Onderliggend antwoord, notulen</td></tr>
+      <tr><td class="num">EC-10</td><td>Het lobbyregister dekt zijn ambtstermijn</td><td><span class="ev D">D</span></td><td>Register startte in 2022</td></tr>
+      <tr><td class="num">F-01–03</td><td>Samenwerking Pfizer–BioNTech, $185m vooraf, Pfizer schoot kosten voor</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">F-04</td><td>EIB tot €100m</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">F-05</td><td>Duitsland tot ~€375m</td><td><span class="ev B">B*</span></td><td>Originele BMBF-beschikking</td></tr>
+      <tr><td class="num">F-06</td><td>BlackRock financierde BNT162 rechtstreeks</td><td><span class="ev C">C</span></td><td>Enig financieringscontract</td></tr>
+      <tr><td class="num">EC-07/08</td><td>Duitse vennootschap in 13F; moeder ontkent beleggingsbevoegdheid</td><td><span class="ev A">A</span></td><td>Toewijzing per fonds</td></tr>
+      <tr><td class="num">H-02</td><td>Merz koos de aandelenposities</td><td><span class="ev C">C</span></td><td>Beleggingscomité, orders</td></tr>
+      <tr><td class="num">T-01</td><td>Pfizer/BioNTech waren proefsponsors</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">T-02</td><td>BlackRock sponsorde of stuurde de proef</td><td><span class="ev C">C</span></td><td>Wat dan ook</td></tr>
+      <tr><td class="num">—</td><td>Anonieme bewering "experimenten op mensen"</td><td><span class="ev C">C</span></td><td>Details of bevestiging</td></tr>
+      <tr><td class="num">B-01</td><td>Een specifieke persoon draagt kunstmatig niet-menselijk DNA</td><td><span class="ev C">C</span></td><td>Stalen, sequencing, junctie</td></tr>
+      <tr><td class="num">B-02</td><td>Symptomen alleen bewijzen DNA-splicing</td><td><span class="ev D">D</span></td><td>Rechtstreeks genomisch bewijs</td></tr>
+      <tr><td class="num">B-03</td><td>Een vreemde sequentie alleen identificeert de dader</td><td><span class="ev D">D</span></td><td>Keten van lot en ingreep</td></tr>
+      <tr><td class="num">C-01</td><td>Mythen en films bewijzen echte experimenten</td><td><span class="ev E">E</span></td><td>Onafhankelijk bewijs</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">* De gebeurtenis is breed bericht; B weerspiegelt alleen dat de originele beschikking niet werd opgehaald.</p>
+</section>
+
+<!-- Sources -->
+<section class="chapter" id="sources">
+  <div class="opener"><span class="num">B</span><h2>Bronnen</h2><span class="label">Primair waar mogelijk</span></div>
+  <ol class="sources">
+    <li><a href="https://www.finanzwelt.de/post/blackrock-ernennt-friedrich-merz-zum-chairman-fuer-deutschland">Finanzwelt: BlackRock ernennt Friedrich Merz zum Chairman für Deutschland</a></li>
+    <li><a href="https://www.manager-magazin.de/unternehmen/personalien/friedrich-merz-wird-lobbyist-des-investmentriesen-blackrock-a-1082798.html">Manager Magazin: Blackrock holt sich Ex-Spitzenmann der CDU als Lobbyisten</a></li>
+    <li><a href="https://www.spiegel.de/wirtschaft/unternehmen/friedrich-merz-bleibt-aufsichtsrat-bei-blackrock-a-1248702.html">Der Spiegel: Friedrich Merz bleibt Aufsichtsrat bei Blackrock</a></li>
+    <li><a href="https://www.spiegel.de/politik/deutschland/friedrich-merz-soll-als-blackrock-lobbyist-viermal-bundesminister-getroffen-haben-a-1249428.html">Der Spiegel: Merz soll als Blackrock-Lobbyist viermal Bundesminister getroffen haben</a></li>
+    <li><a href="https://www.dasinvestment.com/zum-1-juli-nachfolger-fuer-friedrich-merz-bei-blackrock-steht-fest/">DAS INVESTMENT: Nachfolger für Friedrich Merz bei Blackrock steht fest</a></li>
+    <li><a href="https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-biontech-announce-further-details-collaboration">Pfizer: Further details on collaboration with BioNTech (9 April 2020)</a></li>
+    <li><a href="https://www.eib.org/en/press/all/2020-144-eib-to-provide-biontech-with-up-to-eur-100-million-in-debt-financing-for-covid-19-vaccine-development-and-manufacturing">EIB: up to €100 million debt financing for BioNTech</a></li>
+    <li><a href="https://www.fda.gov/media/144245/download">FDA: VRBPAC briefing document, 10 December 2020</a></li>
+    <li><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/comirnaty">EMA: Comirnaty EPAR</a></li>
+    <li><a href="https://portfoliosavvy.com/portfolio/000108636421000004-blackrock-inc-q4-2020">BlackRock Q4 2020 13F combination report (PortfolioSavvy)</a></li>
+    <li><a href="https://portfoliosavvy.com/investor/0001364742/investment/09075V102">BlackRock Finance, Inc. BNTX holdings history (PortfolioSavvy)</a></li>
+    <li><a href="https://portfoliosavvy.com/investment/717081103/2020/4">PFE Q4 2020 13F institutional holders (PortfolioSavvy)</a></li>
+    <li><a href="https://www.gesetze-im-internet.de/lobbyrg/LobbyRG.pdf">Lobbyregistergesetz (LobbyRG)</a></li>
+    <li><a href="https://www.lobbyregister.bundestag.de/suche/R003422">Lobbyregister: BlackRock Asset Management Deutschland AG</a></li>
+    <li><a href="https://transparency-register.europa.eu/index_en">EU Transparency Register</a></li>
+    <li><a href="https://www.bundesregierung.de/breg-de/aktuelles/deutscher-nationalpreis-2025-2353552">Bundesregierung: Deutscher Nationalpreis 2025 for the BioNTech founders</a></li>
+    <li><a href="https://doi.org/10.1136/bmj-2022-073747">Lalani et al., BMJ 2023: US public investment in mRNA COVID-19 vaccines</a></li>
+    <li><a href="https://doi.org/10.1001/jamanetworkopen.2022.26892">Angelis et al., JAMA Netw Open 2022: funding sources of COVID-19 trials</a></li>
+    <li><a href="https://doi.org/10.3390/cimb44030073">Aldén et al., 2022: reverse transcription of BNT162b2 in a liver cell line in vitro</a></li>
+    <li><a href="https://doi.org/10.1093/ser/mww040">Kinderman, Socio-Economic Review 2016</a></li>
+    <li><a href="https://www.cdc.gov/tuskegee/about/index.html">CDC: About the Untreated Syphilis Study at Tuskegee</a></li>
+    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">HHS: The Belmont Report</a></li>
+    <li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/long-term-follow-after-administration-human-gene-therapy-products">FDA: Long-term follow-up after human gene therapy</a></li>
+    <li><a href="https://www.uzleuven.be/nl/centrum-menselijke-erfelijkheid">UZ Leuven: Centrum Menselijke Erfelijkheid</a></li>
+    <li><a href="https://www.famhp.be/en/complaints">FAMHP (FAGG): Complaints</a></li>
+    <li><a href="https://www.gegevensbeschermingsautoriteit.be/burger/acties/klacht-indienen">Gegevensbeschermingsautoriteit: Klacht indienen</a></li>
+  </ol>
+</section>
+
+
+
+<footer class="label">Evidence Chain · Speciale editie nr. 1 · Gebouwd op de dossiers van Project Evidence Chain. Scores beschrijven het gevonden bewijs, niet de kans dat er nooit iets onbekends gebeurd is.</footer>
+</main>
+
+</body>
+</html>
