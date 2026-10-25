@@ -11,6 +11,11 @@
 <meta property="og:description" content="Friedrich Merz, BlackRock und das Impfstoffgeld: was die Dokumente beweisen, was nicht, und jedes fehlende Glied benannt.">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://boozelee.github.io/evidence-chain/assets/og-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://boozelee.github.io/evidence-chain/assets/og-de.jpg">
+<meta property="og:url" content="https://boozelee.github.io/evidence-chain/de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <link rel="alternate" hreflang="en" href="./"><link rel="alternate" hreflang="de" href="de.html"><link rel="alternate" hreflang="nl" href="nl.html"><link rel="alternate" hreflang="zh" href="zh.html">
@@ -179,6 +184,17 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 :lang(zh) blockquote.pull{font-size:clamp(1.3rem,3.4vw,1.9rem)}
 :lang(zh) .drop::first-letter{float:none;font-size:inherit;line-height:inherit;padding:0;font-family:inherit;font-weight:inherit}
 :lang(zh) body{line-height:1.85}
+/* art */
+.cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,32%);gap:1.5rem 2.4rem;align-items:center}
+.cover .text{min-width:0}
+.cover h1{font-size:clamp(2.8rem,7.4vw,6.2rem)}
+:lang(zh) .cover h1{font-size:clamp(2.2rem,5.6vw,4.4rem)}
+.cover-art{margin:0}
+.cover-art img{display:block;width:100%;height:auto;border:3px solid var(--ink);transform:rotate(1.2deg);box-shadow:8px 8px 0 var(--tape)}
+@media (max-width:760px){.cover{grid-template-columns:1fr}.cover-art{max-width:420px}}
+.art{margin:0 0 2rem;width:min(calc(100vw - 32px),1080px);position:relative;left:50%;transform:translateX(-50%)}
+.art img{display:block;width:100%;height:auto;border:3px solid var(--ink)}
+.art figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.45rem;max-width:66ch;margin-inline:auto}
 
 </style>
 </head>
@@ -191,10 +207,13 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
   <nav class="lang" aria-label="Language / Sprache / Taal / 语言"><a href="./" hreflang="en" lang="en">EN</a><a href="de.html" hreflang="de" lang="de" aria-current="page">DE</a><a href="nl.html" hreflang="nl" lang="nl">NL</a><a href="zh.html" hreflang="zh" lang="zh">中文</a></nav>
 
   <section class="cover">
+    <div class="text">
     <div class="kicker">Eine forensische Sonderausgabe</div>
     <h1>Folge dem Geld. <em>Hör auf, wo das Papier aufhört.</em></h1>
     <p class="dek">Friedrich Merz, BlackRock, das Impfstoffgeld und die Behauptung, Körper seien im Verborgenen verändert worden. Was die Dokumente beweisen, was nicht, und warum die Lücke die eigentliche Geschichte ist.</p>
     <p class="label byline">Basierend auf den Dossiers von Project Evidence Chain · Jede Behauptung bewertet von A bis E</p>
+  </div>
+    <figure class="cover-art"><img src="assets/cover.jpg" width="1024" height="1536" alt="Poster: a shattered DNA helix between a corporate tower and a government building, papers falling, headline The Chain Is Incomplete, Association Is Not Causation"></figure>
   </section>
 </div>
 
@@ -256,6 +275,7 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 
 <section class="chapter" id="chair">
   <div class="opener"><span class="num">01</span><h2>Der Aufsichtsratsstuhl</h2><span class="label">Was Merz bei BlackRock tatsächlich tat, 2016 bis 2020</span></div>
+  <figure class="art"><img src="assets/ch01-boardroom.jpg" width="1600" height="900" loading="lazy" alt="An empty boardroom chair at night behind a BlackRock Germany nameplate, with folders labelled 13F filings and board minutes"><figcaption>Illustration</figcaption></figure>
 
   <p class="drop">Im März 2016 bekam Friedrich Merz, der frühere Unions-Fraktionschef, den Angela Merkel aus der ersten Reihe gedrängt hatte, einen neuen Job. BlackRock, der Vermögensverwalter mit mehr verwaltetem Geld, als die meisten Länder an Wirtschaftsleistung haben, machte ihn zum Vorsitzenden des Aufsichtsrats der <em>BlackRock Asset Management Deutschland AG</em>, seiner deutschen Gesellschaft. <span class="ev A">M-01 · A</span></p>
 
@@ -283,6 +303,7 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 
 <section class="chapter" id="money">
   <div class="opener"><span class="num">02</span><h2>Das Geld, das es wirklich gab</h2><span class="label">Woher das Impfstoffgeld tatsächlich kam</span></div>
+  <figure class="art"><img src="assets/ch02-money.jpg" width="1536" height="1024" loading="lazy" alt="Euro and dollar notes beside the European Investment Bank on one side, vaccine vials and clinical-trial binders on the other"><figcaption>Illustration</figcaption></figure>
 
   <p class="drop">Wer wissen will, wer den Impfstoff von Pfizer und BioNTech bezahlt hat, braucht keinen Whistleblower. Er braucht eine Pressemitteilung, einen Kontoauszug und etwas Geduld. Die Geldspur ist öffentlich, und sie läuft nicht über BlackRock.</p>
 
@@ -375,6 +396,7 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 
 <section class="chapter" id="access">
   <div class="opener"><span class="num">04</span><h2>Zugang ist nicht Vereinnahmung</h2><span class="label">Die Treffen und die Protokolle, die niemand führen musste</span></div>
+  <figure class="art"><img src="assets/ch04-access.jpg" width="1536" height="1024" loading="lazy" alt="Four government doors in a marble corridor, one open with a man silhouetted in light, 2017 and 2018 calendar pages on the floor"><figcaption>Illustration</figcaption></figure>
 
   <p class="drop">Jetzt kommen wir zu dem Teil, der dich wirklich ankotzen sollte.</p>
 
@@ -456,6 +478,7 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 
 <section class="chapter" id="archive">
   <div class="opener"><span class="num">07</span><h2>Das Archiv der echten Gräuel</h2><span class="label">Wie echte Programme ohne Einwilligung aussehen, wenn die Akten aufgehen</span></div>
+  <figure class="art"><img src="assets/ch07-precedents.jpg" width="1536" height="1024" loading="lazy" alt="Four panels titled Historical Precedents: Tuskegee, Guatemala, MKUltra and isotope vials, captioned Precedent is not proof of this claim"><figcaption>Illustrative Rekonstruktionen, keine Archivfotos.</figcaption></figure>
 
   <p class="drop">Wer dir erzählt, „Institutionen würden so etwas nie tun", lügt oder hat keine Ahnung. Sie haben es getan. Wiederholt. Und wir wissen genau, woher wir es wissen.</p>
 
@@ -482,6 +505,7 @@ footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
 
 <section class="chapter" id="proof">
   <div class="opener"><span class="num">08</span><h2>Was es wirklich beweisen würde</h2><span class="label">Ein Feldhandbuch für alle, die die Lücken schließen wollen</span></div>
+  <figure class="art"><img src="assets/ch08-lab.jpg" width="1600" height="900" loading="lazy" alt="Two researchers at sequencers; a monitor shows a DNA junction marked hypothetical, validation required; a clipboard checklist is unticked"><figcaption>Illustration</figcaption></figure>
 
   <p class="drop">Genug davon, was fehlt. Hier steht, wie man es holt. Nichts davon braucht einen Hacker oder ein Leak. Es braucht Briefe, Formulare und Sturheit.</p>
 
