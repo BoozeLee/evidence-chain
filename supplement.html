@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Evidence Chain Part II</title>
+<meta name="description" content="Part II of the Evidence Chain special edition: the SV40 fragment, the Ventavia case, BlackRock's pension lobbying, and why the experiment claim is unsupported.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evidence Chain Part II">
+<meta property="og:description" content="Part II of the Evidence Chain special edition: the SV40 fragment, the Ventavia case, BlackRock's pension lobbying, and why the experiment claim is unsupported.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://boozelee.github.io/assets/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://boozelee.github.io/assets/og-en.jpg">
+<meta property="og:url" content="https://boozelee.github.io/supplement.html">
+<link rel="canonical" href="https://boozelee.github.io/supplement.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="./"><link rel="alternate" hreflang="de" href="de.html"><link rel="alternate" hreflang="nl" href="nl.html"><link rel="alternate" hreflang="zh" href="zh.html">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: a single 66ch reading column on photocopy-grey paper; chapter openers break out wide; evidence-tape yellow is the one loud element. */
+:root{
+  --paper:#E8EAE5; --paper-2:#DCDFD8; --ink:#15171A; --muted:#565C58; --rule:#C3C7BF;
+  --tape:#F2C200; --tape-ink:#15171A; --stamp:#B0261D;
+  --gA:#2E6A39; --gB:#2A5C88; --gC:#8C6200; --gD:#A3271F; --gE:#6A5A7B;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111315; --paper-2:#1A1D20; --ink:#E5E7E2; --muted:#9AA09B; --rule:#2B3034;
+  --tape:#F2C200; --tape-ink:#111315; --stamp:#E35B50;
+  --gA:#6FBF7C; --gB:#74A8DA; --gC:#E0AE3E; --gD:#EC6A60; --gE:#B4A3C8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.18rem;line-height:1.62;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
+a{color:inherit;text-decoration-color:var(--tape);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--tape);outline-offset:2px}
+.col{max-width:66ch;margin-inline:auto}
+.wide{max-width:1080px;margin-inline:auto}
+p{margin:0 0 1.05em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:.95;margin:0;font-weight:900;text-transform:uppercase}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-block:1.4rem .6rem}
+.mast .name{font-family:var(--display);font-weight:900;font-size:1.6rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* cover */
+.cover{padding-block:2.2rem 1rem}
+.cover .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.cover h1{font-size:clamp(3rem,10vw,7.4rem);letter-spacing:-.01em}
+.cover h1 em{font-style:normal;background:var(--tape);color:var(--tape-ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.cover .dek{font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.4;max-width:46ch;margin-top:1.4rem}
+.byline{margin-top:1.2rem}
+
+.tape{background:var(--tape);color:var(--tape-ink);font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.18em;
+  font-size:clamp(.95rem,2.2vw,1.25rem);white-space:nowrap;overflow:hidden;padding:.45rem 0;transform:rotate(-1.6deg);margin:2.2rem calc(-1 * max(16px,env(safe-area-inset-left,0px))) 2.4rem;
+  border-block:3px solid var(--tape-ink)}
+.tape span{display:inline-block;padding-left:1rem;animation:crawl 60s linear infinite}
+@keyframes crawl{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape span{animation:none}}
+
+/* chain figure */
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:.6rem;margin:1rem 0 .4rem}
+.link{flex:1 1 150px;min-width:0;border:3px solid var(--ink);border-radius:999px;padding:.8rem 1.1rem;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.15rem}
+.link b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.05;letter-spacing:.02em}
+.link small{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.link.gap{border-style:dashed;border-color:var(--stamp);color:var(--stamp)}
+.link.gap small{color:var(--stamp)}
+.figcap{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.5;margin-top:.5rem}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:1px solid var(--rule);margin-block:2rem 3rem}
+.toc a{display:grid;grid-template-columns:2.6rem 1fr;gap:.4rem;padding:.8rem .4rem;border-bottom:1px solid var(--rule);text-decoration:none}
+.toc a:hover{background:var(--paper-2)}
+.toc .n{font-family:var(--display);font-weight:900;font-size:1.6rem;line-height:1}
+.toc .t{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.1}
+
+/* chapter openers */
+.chapter{margin-top:4.5rem;scroll-margin-top:1rem}
+.opener{display:grid;grid-template-columns:auto 1fr;gap:0 1.2rem;align-items:end;border-top:3px solid var(--ink);padding-top:1rem;margin-bottom:1.8rem}
+.opener .num{font-family:var(--display);font-weight:900;font-size:clamp(4.5rem,13vw,8rem);line-height:.8;color:var(--tape);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+.opener h2{font-size:clamp(2.2rem,6vw,4rem)}
+.opener .label{grid-column:1/-1;margin-top:.8rem}
+
+h3{font-size:1.6rem;margin:2.2rem 0 .7rem}
+.drop::first-letter{font-family:var(--display);font-weight:900;float:left;font-size:4.6em;line-height:.78;padding:.06em .08em 0 0}
+
+blockquote.pull{margin:2rem 0;padding:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.02;border:none}
+blockquote.pull::before{content:"";display:block;width:3.5rem;height:.45rem;background:var(--tape);margin-bottom:.7rem}
+
+/* evidence chips */
+.ev{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;border:1.5px solid currentColor;border-radius:3px;padding:.05em .38em;vertical-align:.12em}
+.ev.A{color:var(--gA)}.ev.B{color:var(--gB)}.ev.C{color:var(--gC)}.ev.D{color:var(--gD)}.ev.E{color:var(--gE)}
+
+/* proves / doesn't */
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink);margin:1.8rem 0;font-size:1rem;line-height:1.5}
+.verdict>div{padding:1rem 1.1rem;min-width:0}
+.verdict>div+div{border-left:2px solid var(--ink);background:var(--paper-2)}
+.verdict h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem}
+.verdict .yes h4{color:var(--gA)} .verdict .no h4{color:var(--stamp)}
+.verdict ul{margin:0;padding-left:1.1rem}
+.verdict li+li{margin-top:.35rem}
+@media (max-width:600px){.verdict{grid-template-columns:1fr}.verdict>div+div{border-left:none;border-top:2px solid var(--ink)}}
+
+/* gap line at chapter end */
+.gapline{font-family:var(--mono);font-size:.8rem;line-height:1.55;border-left:6px solid var(--stamp);padding:.6rem 0 .6rem 1rem;margin-top:2rem}
+.gapline b{color:var(--stamp);letter-spacing:.1em}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:1.4rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.4;min-width:560px}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.6rem .6rem;border-bottom:1px solid var(--rule)}
+td{padding:.6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+
+/* timeline */
+.timeline{list-style:none;margin:1.6rem 0;padding:0;border-left:3px solid var(--ink)}
+.timeline li{position:relative;padding:0 0 1.1rem 1.3rem;font-size:1rem;line-height:1.45}
+.timeline li::before{content:"";position:absolute;left:-9px;top:.35rem;width:15px;height:15px;background:var(--paper);border:3px solid var(--ink);border-radius:50%}
+.timeline li.merz::before{background:var(--tape)}
+.timeline time{display:block;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+
+/* five-link ladder */
+.ladder{counter-reset:step;display:grid;gap:.5rem;margin:1.6rem 0;padding:0;list-style:none}
+.ladder li{counter-increment:step;display:grid;grid-template-columns:2.6rem 1fr auto;gap:.8rem;align-items:center;border:2px solid var(--ink);padding:.7rem .9rem;font-size:1rem;line-height:1.35}
+.ladder li::before{content:counter(step);font-family:var(--display);font-weight:900;font-size:1.8rem;line-height:1}
+.stamp{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--stamp);border:2px solid var(--stamp);padding:.15rem .45rem;transform:rotate(-4deg);white-space:nowrap}
+.stamp.ok{color:var(--gA);border-color:var(--gA)}
+@media (max-width:480px){.ladder li{grid-template-columns:2rem 1fr}.ladder .stamp{grid-column:2;justify-self:start}}
+
+/* protocol strip */
+.protocol{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.4rem 0}
+.protocol span{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1rem;letter-spacing:.04em;border:2px solid var(--ink);padding:.35rem .7rem}
+.protocol span:not(:last-child)::after{content:" →";color:var(--muted)}
+
+/* scale */
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin:1.6rem 0}
+.scale div{border-top:8px solid currentColor;padding-top:.5rem;font-size:.92rem;line-height:1.35;min-width:0}
+.scale b{display:block;font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:1}
+.scale span{color:var(--ink)}
+@media (max-width:640px){.scale{grid-template-columns:1fr}.scale div{display:grid;grid-template-columns:2.6rem 1fr;gap:.6rem;align-items:start}}
+
+.box{background:var(--paper-2);border:2px solid var(--ink);padding:1.1rem 1.2rem;margin:1.8rem 0;font-size:1rem;line-height:1.55}
+.box .label{display:block;margin-bottom:.5rem}
+.box pre{white-space:pre-wrap;font-family:var(--mono);font-size:.85rem;margin:.4rem 0 0}
+
+/* art desk */
+.plates{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.4rem}
+.plate{border:2px solid var(--ink);padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.plate h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.15rem;margin:0}
+.plate p{font-family:var(--mono);font-size:.76rem;line-height:1.55;margin:0;flex:1}
+.plate button{align-self:flex-start;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--tape);color:var(--tape-ink);border:2px solid var(--tape-ink);padding:.35rem .7rem;cursor:pointer}
+
+.sources{font-size:.9rem;line-height:1.5}
+.sources li{margin-bottom:.45rem;overflow-wrap:anywhere}
+footer{margin-top:4rem;border-top:3px solid var(--ink);padding-top:1rem}
+
+/* language switcher */
+.lang{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:flex-end;padding-top:.7rem}
+.lang a{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-decoration:none;border:2px solid var(--ink);padding:.25rem .55rem;min-width:2.6rem;text-align:center}
+.lang a:hover{background:var(--paper-2)}
+.lang a[aria-current="page"]{background:var(--tape);color:var(--tape-ink);border-color:var(--tape-ink)}
+/* Chinese */
+:root:lang(zh){--display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--body:"Noto Serif SC","Songti SC","SimSun",serif}
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3,:lang(zh) .link b,:lang(zh) .toc .t,:lang(zh) blockquote.pull,:lang(zh) .stamp,:lang(zh) .protocol span{letter-spacing:0;line-height:1.2}
+:lang(zh) .cover h1{font-size:clamp(2.4rem,7.5vw,5.6rem)}
+:lang(zh) .opener h2{font-size:clamp(1.8rem,5vw,3.2rem)}
+:lang(zh) blockquote.pull{font-size:clamp(1.3rem,3.4vw,1.9rem)}
+:lang(zh) .drop::first-letter{float:none;font-size:inherit;line-height:inherit;padding:0;font-family:inherit;font-weight:inherit}
+:lang(zh) body{line-height:1.85}
+/* art */
+.cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,32%);gap:1.5rem 2.4rem;align-items:center}
+.cover .text{min-width:0}
+.cover h1{font-size:clamp(2.8rem,7.4vw,6.2rem)}
+:lang(zh) .cover h1{font-size:clamp(2.2rem,5.6vw,4.4rem)}
+.cover-art{margin:0}
+.cover-art img{display:block;width:100%;height:auto;border:3px solid var(--ink);transform:rotate(1.2deg);box-shadow:8px 8px 0 var(--tape)}
+@media (max-width:760px){.cover{grid-template-columns:1fr}.cover-art{max-width:420px}}
+.art{margin:0 0 2rem;width:min(calc(100vw - 32px),1080px);position:relative;left:50%;transform:translateX(-50%)}
+.art img{display:block;width:100%;height:auto;border:3px solid var(--ink)}
+.art figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.45rem;max-width:66ch;margin-inline:auto}
+
+</style>
+</head>
+<body>
+<div class="wide">
+  <header class="mast">
+    <span class="name">Evidence Chain</span>
+    <span class="label">Special Edition · No. 1 · Part II · October 2026</span>
+  </header>
+  <nav class="lang" aria-label="Edition"><a href="./" hreflang="en">← Part I</a><a href="supplement.html" aria-current="page">Part II</a></nav>
+
+  <section class="cover">
+    <div class="text">
+    <div class="kicker">Part II · The seven open gaps</div>
+    <h1>The bridge <em>that isn't there.</em></h1>
+    <p class="dek">We sent researchers back into the trial registers, court dockets, SEC filings and the lobbying register to close the gaps from Part I. The molecule, the money and the paperwork each tell a real story. None of them connects to the others.</p>
+    <p class="label byline">Follow-up to Special Edition No. 1 · Every claim graded A to E · New register entries in the appendix</p>
+  </div>
+    <figure class="cover-art"><img src="assets/ch08-lab.jpg" width="1600" height="900" alt="Two researchers at sequencers; a monitor shows a DNA junction marked hypothetical, validation required; a clipboard checklist is unticked"></figure>
+  </section>
+</div>
+
+<div class="tape" aria-hidden="true"><span>Three real stories ✕ No proven bridge ✕ Three real stories ✕ No proven bridge ✕ Three real stories ✕ No proven bridge ✕ Three real stories ✕ No proven bridge ✕ Three real stories ✕ No proven bridge ✕ Three real stories ✕ No proven bridge ✕</span></div>
+
+<div class="wide">
+  <figure style="margin:0">
+    <div class="chain" role="img" aria-label="Three separate tracks. Molecular: residual DNA present, documented; integration unproven. Financial: BlackRock held shares, documented; funded BioNTech, no document. Procedural: trials approved, documented; non-consensual experiment, unsupported.">
+      <div class="link"><b>Residual DNA in vials</b><small>V-01 · A</small></div>
+      <div class="link gap"><b>? Integrates into people</b><small>V-04 · C</small></div>
+      <div class="link"><b>BlackRock lobbies on pensions</b><small>L-02 · A</small></div>
+      <div class="link gap"><b>? Wrote the policy</b><small>L-03 · C</small></div>
+      <div class="link gap"><b>? Experiment without consent</b><small>P-01 · E</small></div>
+    </div>
+    <figcaption class="figcap">Part II in one row. Each track has a documented core and an unproven extension. The bridge between the tracks has no document at all.</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="Contents">
+    <a href="#question"><span class="n">10</span><span class="t">The question we were asked</span></a>
+    <a href="#molecular"><span class="n">11</span><span class="t">Molecular: the SV40 fragment</span></a>
+    <a href="#procedural"><span class="n">12</span><span class="t">Procedural: consent, ethics, Ventavia</span></a>
+    <a href="#financial"><span class="n">13</span><span class="t">Financial: shares, issuance, lobbying</span></a>
+    <a href="#grade"><span class="n">14</span><span class="t">Why the experiment claim fell to E</span></a>
+    <a href="#verdict2"><span class="n">15</span><span class="t">Three stories, no bridge</span></a>
+    <a href="#register2"><span class="n">C</span><span class="t">New register entries</span></a>
+    <a href="#sources2"><span class="n">D</span><span class="t">Sources</span></a>
+  </nav>
+</div>
+
+<main class="col">
+
+<section class="chapter" id="question">
+  <div class="opener"><span class="num">10</span><h2>The question we were asked</h2><span class="label">Biological venture, or lobbying with a lab coat on?</span></div>
+
+  <p class="drop">After Part I went up, the sharpest version of the challenge landed in our inbox. Forget the paperwork, it said. The real hypothesis is that people were experimented on without meaningful consent, even though every regulator signed off. Merz is the political link, BlackRock the financial link, Şahin and Türeci the scientific link. So which was it: a genuine biological venture, or an oversized corporate lobbying exercise?</p>
+
+  <p>Fair question. It deserves the same treatment we gave everything else: the documents, graded, with the holes marked in red. So we went back in, across three dimensions. The molecule. The money. The procedure.</p>
+
+  <p>Spoiler, because we don't do cliffhangers with people's health: the answer is neither. Both halves of that choice assume the three links belong to one machine. The records show three separate stories, each with something real in it, none of them wired to the others.</p>
+
+  <blockquote class="pull">"De jure approved, de facto non-consensual" is a serious charge. Serious charges need participant-level paper. So far there isn't any.</blockquote>
+</section>
+
+<section class="chapter" id="molecular">
+  <div class="opener"><span class="num">11</span><h2>Molecular: the SV40 fragment</h2><span class="label">Smoking gun or minor detail? Neither, and here's why</span></div>
+
+  <p class="drop">Start with the claim that sounds the scariest, because it's the one with the most actual science behind it.</p>
+
+  <p>mRNA vaccines are made by copying RNA off a DNA template, a circular piece of bacterial DNA called a plasmid. The template is then chopped up with enzymes and filtered out. Not perfectly. Fragments survive. That isn't a conspiracy theory; regulators have said it from day one. The Paul-Ehrlich-Institut and the EMA set a release limit of 10 nanograms of DNA per dose, equivalent to 330 ng per milligram of RNA, tested on the drug substance. <span class="ev A">V-01 · A</span></p>
+
+  <h3>The part Pfizer didn't flag</h3>
+  <p>Pfizer's plasmid contains a short stretch of DNA borrowed from the SV40 virus, an enhancer/promoter element used as a genetic switch in lab constructs. It's a fragment of a sequence, not the virus. In October 2023, Health Canada confirmed the awkward bit: "Although the full DNA sequence of the Pfizer plasmid was provided at the time of initial filing, the sponsor did not specifically identify the SV40 sequence." In the same statement, the regulator said the fragment "is inactive, has no functional role", and does not change the benefit–risk assessment. <span class="ev A">V-03 · A</span></p>
+
+  <p>So here's the honest call. It's a real disclosure failure. A company filing a sequence without labelling a viral element in it, and a regulator having to say so in public, deserves scrutiny. But it isn't a smoking gun for anything bigger. The sequence was in the file. Anyone who read it could find it. Concealment means hiding, and you can't hide something in a document you hand over. Deliberate concealment stays at C until someone produces the internal paperwork showing intent. <span class="ev C">V-03 concealment · C</span></p>
+
+  <h3>Too much DNA? Depends who's measuring, and how</h3>
+  <p>In September 2025, Speicher, Rose &amp; McKernan published in the journal <em>Autoimmunity</em> an analysis of 32 vials from 16 lots collected in Ontario. Measured by fluorometry, they reported DNA levels 36 to 627 times the limit. Measured by qPCR, the picture shrank: Moderna vials were within the limit, and some Pfizer vials exceeded it for the SV40 target.</p>
+
+  <p>On the other side: the PEI says its own independent testing of batches in late 2023 confirmed the manufacturers' results, and no batch was out of specification. Critics of the high numbers point out that fluorometry can't cleanly separate DNA from the huge amount of RNA in the same vial, and that the tested vials were expired, with undocumented custody. <span class="ev B">V-02 · B</span></p>
+
+  <p>That's a genuine scientific dispute, not a closed case either way. What settles it is boring and achievable: blinded qPCR on sealed, in-date lots, run by several labs, with the chain of custody logged. Until that happens, "exceeds the limit" stays at B.</p>
+
+  <h3>The jump that hasn't been made</h3>
+  <p>Now the claim that actually matters for "experimenting on people": does any of this DNA end up inside human chromosomes? The only study usually cited is Aldén et al. (2022), which found reverse-transcribed vaccine sequence in Huh7 cells, a liver cancer line, in a dish. It didn't show integration in those cells, let alone in a person. A published comment in the same journal made exactly that point. <span class="ev C">V-04 · C</span></p>
+
+  <blockquote class="pull">From "fragments in a vial" to "rewritten in a human genome" is a leap across four separate claims. Only the first one is proven.</blockquote>
+
+  <div class="verdict">
+    <div class="yes"><h4>This proves</h4><ul><li>Residual plasmid DNA is present, as regulators always said.</li><li>The SV40 element was in the filed sequence but not specifically flagged.</li></ul></div>
+    <div class="no"><h4>This does not prove</h4><ul><li>That limits were exceeded across the board.</li><li>That anything was deliberately hidden.</li><li>That vaccine DNA integrates into anyone's genome.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Remaining gap:</b> blinded multi-lab qPCR on sealed lots; the EMA file showing how the plasmid was annotated (request under Regulation 1049/2001); and, for integration, junction-spanning reads in human tissue confirmed by PCR and Sanger sequencing with contamination controls.</p>
+</section>
+
+<section class="chapter" id="procedural">
+  <div class="opener"><span class="num">12</span><h2>Procedural: consent, ethics, Ventavia</h2><span class="label">What the trial paperwork shows, and what one whistleblower alleged</span></div>
+
+  <p class="drop">In Part I we said the German trial had an approval trail. Now we have the register numbers, so you can check it yourself instead of trusting us.</p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Trial</th><th>Register IDs</th><th>Ethics opinion</th><th>PEI decision</th></tr></thead>
+    <tbody>
+      <tr><td>BNT162-01 (first German trial)</td><td class="num">EudraCT 2020-001038-36 · NCT04380701</td><td class="num">15 Apr 2020</td><td class="num">20 Apr 2020</td></tr>
+      <tr><td>C4591001 (global phase 1/2/3)</td><td class="num">EudraCT 2020-002641-42 · NCT04368728</td><td class="num">31 Aug 2020</td><td class="num">4 Sep 2020</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">German records in the EU Clinical Trials Register. The BNT162-01 ethics committee was that of the Landesärztekammer Baden-Württemberg. <span class="ev A">T-01 · T-02 · A</span></p>
+
+  <p>Here's the detail that undercuts the "rubber stamp" story better than any press release could. The trial's own results record shows the regulators pushing back. On 17 April 2020 the protocol was amended after "feedback from the PEI". On 28 October 2020, "as requested by the IEC", the ethics committee, shortened dosing intervals were reversed. <span class="ev A">T-03 · A</span> A rubber stamp doesn't send the paperwork back.</p>
+
+  <h3>The whistleblower</h3>
+  <p>Now the strongest allegation on the other side, and it deserves to be stated at full strength. In November 2021 The BMJ published an investigation by Paul D. Thacker. Brook Jackson, a regional director at Ventavia Research Group, told the journal that the company "falsified data, unblinded patients, employed inadequately trained vaccinators, and was slow to follow up on adverse events" at sites in Texas running Pfizer's trial. She emailed the FDA on 25 September 2020 and was fired that afternoon. <span class="ev B">T-04 · B</span></p>
+
+  <p>She then sued under the US False Claims Act (E.D. Texas, case 1:21-cv-00008). It went badly for her in court. On 31 March 2023 the judge dismissed her central claims with prejudice. On 9 August 2024 the court granted the US government's own motion to dismiss and closed the case. Her appeal to the Fifth Circuit (No. 24-40564) was fully briefed in 2025, with no decision on the docket as of June 2026. <span class="ev A">T-05 · A</span></p>
+
+  <h3>Did losing mean she was wrong?</h3>
+  <p>No, and anyone who tells you otherwise is spinning. A False Claims Act case asks a narrow legal question: did the defendant make a false claim for payment that mattered to the government's decision to pay? The rulings turned on that. They held that she hadn't pleaded a false claim for payment. No court has ever ruled on whether her factual allegations about Ventavia were true. Her case was neither vindicated nor refuted on the facts.</p>
+
+  <p>But scale matters too. According to The BMJ, Ventavia enrolled over 1,000 participants at three sites. The full trial enrolled about 44,000 across 153 sites. Even if every allegation about Ventavia were proven, it would be a site-level scandal, not proof that the programme was a fraud. <span class="ev C">T-06 · C</span> And her allegations are about data integrity. They don't say participants didn't consent to being in a trial.</p>
+
+  <blockquote class="pull">A dismissed lawsuit isn't a verdict on the facts. A site-level allegation isn't a programme-level conspiracy. Both sides keep pretending otherwise.</blockquote>
+
+  <div class="verdict">
+    <div class="yes"><h4>This proves</h4><ul><li>Both trials had ethics approval and PEI authorization on dated records.</li><li>Regulators demanded protocol changes.</li><li>Serious allegations about one contractor were made and never tested on the merits.</li></ul></div>
+    <div class="no"><h4>This does not prove</h4><ul><li>That every consent at every site was valid in practice.</li><li>That Ventavia's alleged problems were false, or true.</li><li>Programme-wide fraud or a non-consensual experiment.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Remaining gap:</b> FDA inspection reports (Form 483s, BIMO letters) for the C4591001 sites, by FOIA; German GCP inspection reports and PEI correspondence, by IFG request; and the Fifth Circuit's ruling.</p>
+</section>
+
+<section class="chapter" id="financial">
+  <div class="opener"><span class="num">13</span><h2>Financial: shares, issuance, lobbying</h2><span class="label">Where the money went, and where it didn't</span></div>
+
+  <p class="drop">Part I said a fund owning shares isn't the same as funding a company. This time we went looking for the one route that would make it the same.</p>
+
+  <h3>The 13F filings, from the source</h3>
+  <p>BlackRock's own 13F filings at the SEC list Pfizer (CUSIP 717081103) in its year-end reports for 2016 to 2018, and BioNTech (CUSIP 09075V102) for 2019 to 2021. Accession numbers are in the register below. <span class="ev A">F-01 · F-02 · A</span> We haven't yet summed the sub-manager rows into totals or split them into index funds and active bets. Until we do, "BlackRock held shares" is all we'll print.</p>
+
+  <h3>The only door that matters: new shares</h3>
+  <p>When a company sells newly issued shares, the money goes to the company. That's the one way an investor directly funds the work. So we checked BioNTech's offerings. The IPO on 10 October 2019 sold 10 million ADSs at $15, with J.P. Morgan, BofA, UBS and SVB Leerink as representatives. The July 2020 follow-on named one indicated investor: Pfizer. A full-text search of BioNTech's filings found no BlackRock "indication of interest". <span class="ev C">F-03 · C</span></p>
+
+  <p>So the money trail from Part I holds. Pfizer's cash, public money from Brussels and Berlin, and the company's own offerings paid for BNT162. BlackRock bought tickets to the concert like everyone else running index funds.</p>
+
+  <h3>The lobbying gap: suggesting versus deciding</h3>
+  <p>Here's where the real story lives, and it isn't about vaccines. BlackRock Asset Management Deutschland AG (Lobbyregister R003422) declared €770,001–780,000 in lobbying spend for 2025, with 1.11 full-time staff and 13 regulatory projects. <span class="ev A">L-02 · A</span> The projects are about your pension: the Frühstart-Rente (the state-funded early-start pension for children), private pension reform, and what one paper calls "Einstieg in die teilweise Kapitaldeckung der Rentenfinanzierung", partial capital funding of the statutory pension. That paper went to MPs and the Finance Ministry on 17 September 2025.</p>
+
+  <p>That's the man who used to chair BlackRock Germany, now running the government, while BlackRock writes to his ministries about putting pension money into capital markets. That's a legitimate accountability story, and it deserves to be told loudly.</p>
+
+  <p>Now the cold water, because we promised. Did BlackRock <em>determine</em> the policy, or just <em>suggest</em> it? The record supports suggesting. Other players lobbied the same projects, including the cooperative banks' association BVR, the Deutsches Aktieninstitut, ING and the broker Smartbroker. The Frühstart-Rente bill (Bundestag document 21/7864, 7 September 2026) lists only the pension insurer DRV Bund, the federal tax office, the Bundesbank and members of the Council of Economic Experts as consulted bodies. It also adds certified standard depots, a cost cap and a Bundesbank-run default fund, which aren't an asset manager's dream design. <span class="ev C">L-03 · C</span></p>
+
+  <p>And the content of Merz's own seven contacts from 2016–2020? Still not public. The government says no complete record exists. <span class="ev C">L-01 · not established</span></p>
+
+  <blockquote class="pull">The scandal isn't BlackRock in a vaccine lab. It's BlackRock in the pension debate, with its old chairman in the Chancellery and no minutes anyone has to publish.</blockquote>
+
+  <div class="verdict">
+    <div class="yes"><h4>This proves</h4><ul><li>BlackRock reported Pfizer and BioNTech holdings.</li><li>No filing shows it bought newly issued BioNTech shares.</li><li>It lobbies the Merz government on pension policy.</li></ul></div>
+    <div class="no"><h4>This does not prove</h4><ul><li>That BlackRock funded the vaccine.</li><li>That BlackRock wrote the pension law.</li><li>Anything about what Merz discussed in 2016–2020.</li></ul></div>
+  </div>
+
+  <p class="gapline"><b>Remaining gap:</b> summed 13F totals split by fund; Chancellery and Finance Ministry records of meetings with BlackRock since 6 May 2025 (IFG); and the topics of the seven earlier contacts (a written question through an MP).</p>
+</section>
+
+<section class="chapter" id="grade">
+  <div class="opener"><span class="num">14</span><h2>Why the experiment claim fell to E</h2><span class="label">Not "disproven". Unsupported. There's a difference.</span></div>
+
+  <p class="drop">In Part I, the anonymous claim that Merz took part in "experimenting on people" with Şahin and Türeci sat at C. It's now at E. People will read that as us calling it a lie, so let's be precise.</p>
+
+  <p>C means speculative: a possible explanation without enough evidence. E means unsupported: there's nothing to weigh at all. After a second search we still have no named witness, no date, no place, no victim, no document, no complaint, no court case and no fact-check, because there's nothing specific enough to check. <span class="ev E">P-01 · E</span></p>
+
+  <p>What the search did find is a pattern. Correctiv has documented a fake "Philippe Merz" BlackRock video circulating on Telegram since at least 2019, and in August 2026 an AI-generated image of Merz and Epstein falsely placed at a "BlackRock Investor Day". <span class="ev A">P-02 · A</span> The documented link between Merz and the BioNTech founders is praise: a laudatory speech, a lab visit, a line in an anniversary address. <span class="ev A">P-03 · A</span> That's the soil the rumor grows in: real names, real money, real praise, and a missing link filled in with a feeling.</p>
+
+  <p>E isn't a tombstone. It's a starting line. A named, verifiable witness with documents (consent forms, site records, anything with a date on it) would move this claim up the scale immediately. We'll print that the day it exists.</p>
+
+  <p>The same history that proves institutions can do monstrous things shows how they get caught. Sylvia Wagner's 2019 dissertation documented drug trials on children in West German homes from 1949 to 1975 using company archives and home files, and Germany set up the Stiftung Anerkennung und Hilfe for victims. When the Charité examined Western drug trials in the GDR in 2016, it found up to 900 trials but "no systematic violations" of the rules in force at the time. One scandal was proven by paper. One suspicion was mostly not borne out by paper. Either way, the paper decided. <span class="ev A">H-01 · H-02 · A</span></p>
+</section>
+
+<section class="chapter" id="verdict2">
+  <div class="opener"><span class="num">15</span><h2>Three stories, no bridge</h2><span class="label">Closing argument, Part II</span></div>
+
+  <p class="drop">So, biological venture or lobbying exercise? Here's what the records support.</p>
+
+  <p><strong>The molecule is a real regulatory story.</strong> Residual DNA is present. An SV40 element went unlabelled in a filing. Labs disagree about the amounts. Integration into people is unproven. That's a quality-control and transparency fight that belongs in front of regulators, with sealed samples and blinded labs.</p>
+
+  <p><strong>The procedure is a real oversight story.</strong> The trials were registered, approved and pushed back on by regulators. One contractor faces serious allegations that no court has ever tested on the facts. That's a case for FDA inspection records, not proof of a covert experiment.</p>
+
+  <p><strong>The money is a real power story.</strong> BlackRock didn't fund the vaccine. It does lobby the government of its former chairman on pensions, and nobody has to publish the minutes. That's the accountability story Berlin should answer for.</p>
+
+  <blockquote class="pull">Three real stories. Weld them together without documents and you lose all three.</blockquote>
+
+  <p>The bridge between them, the one the "experiment" hypothesis needs, still has no plank in it. Not a meeting, not a payment, not a consent form, not a sequence. Point at the gap, name what would fill it, and go get it. The request texts are in the register below and in chapter 08 of Part I.</p>
+</section>
+
+<section class="chapter" id="register2">
+  <div class="opener"><span class="num">C</span><h2>New register entries</h2><span class="label">Merge with the Part I register</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>ID</th><th>Claim</th><th>Grade</th><th>What would change it</th></tr></thead>
+    <tbody>
+      <tr><td class="num">P-01</td><td>Merz, Şahin and/or Türeci conducted non-consensual experiments</td><td><span class="ev E">E</span></td><td>A named witness with documents</td></tr>
+      <tr><td class="num">P-02</td><td>Merz–BlackRock fakes circulate on Telegram (Correctiv)</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">P-03</td><td>Documented Merz–Şahin/Türeci link is public praise</td><td><span class="ev A">A</span></td><td>Record of an operational or financial tie</td></tr>
+      <tr><td class="num">T-01</td><td>BNT162-01: ethics approval 15 Apr 2020, PEI 20 Apr 2020</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">T-02</td><td>C4591001 authorized in Germany (31 Aug / 4 Sep 2020)</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">T-03</td><td>PEI and ethics committee forced protocol changes</td><td><span class="ev A">A</span></td><td>PEI/IEC letters (IFG)</td></tr>
+      <tr><td class="num">T-04</td><td>Data-integrity problems at Ventavia sites</td><td><span class="ev B">B</span></td><td>FDA inspection reports; findings on the merits</td></tr>
+      <tr><td class="num">T-05</td><td>Jackson FCA case dismissed; appeal 24-40564 pending</td><td><span class="ev A">A</span></td><td>Fifth Circuit ruling</td></tr>
+      <tr><td class="num">T-06</td><td>Ventavia problems prove programme-wide fraud</td><td><span class="ev C">C</span></td><td>Findings at multiple sites</td></tr>
+      <tr><td class="num">V-01</td><td>Residual plasmid DNA present in vials</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">V-02</td><td>DNA levels exceed regulatory limits</td><td><span class="ev B">B</span></td><td>Blinded multi-lab qPCR, sealed lots</td></tr>
+      <tr><td class="num">V-03</td><td>SV40 element filed but not specifically flagged</td><td><span class="ev A">A</span></td><td>— (deliberate concealment: C)</td></tr>
+      <tr><td class="num">V-04</td><td>Vaccine DNA integrates into recipients' genomes</td><td><span class="ev C">C</span></td><td>Validated junctions in human tissue</td></tr>
+      <tr><td class="num">H-01</td><td>Western drug trials in the GDR (up to 900; "no systematic violations")</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">H-02</td><td>Drug trials on children in West German homes, 1949–1975</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">F-01/02</td><td>BlackRock 13F lists Pfizer (2016–18) and BioNTech (2019–21)</td><td><span class="ev A">A</span></td><td>Summed totals, fund split</td></tr>
+      <tr><td class="num">F-03</td><td>BlackRock funded BioNTech via new shares</td><td><span class="ev C">C</span></td><td>Allocation records or named indication</td></tr>
+      <tr><td class="num">L-01</td><td>Content of Merz's seven contacts released</td><td><span class="ev C">—</span></td><td>IFG release or written question</td></tr>
+      <tr><td class="num">L-02</td><td>BlackRock lobbies the Merz government on pensions</td><td><span class="ev A">A</span></td><td>—</td></tr>
+      <tr><td class="num">L-03</td><td>BlackRock determined the Frühstart-Rente design</td><td><span class="ev C">C</span></td><td>Ministry meeting records (IFG)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="figcap">Grades as of 25 October 2026. Accession numbers: Pfizer 0001086364-17-000005, -18-000003, -19-000003; BioNTech 0001086364-20-000006, 0001086364-21-000004, 0000834237-22-008654.</p>
+</section>
+
+<section class="chapter" id="sources2">
+  <div class="opener"><span class="num">D</span><h2>Sources</h2><span class="label">Primary where possible</span></div>
+  <ol class="sources">
+    <li><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-001038-36/DE">EU Clinical Trials Register: BNT162-01, EudraCT 2020-001038-36</a></li>
+    <li><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-001038-36/results">EU Clinical Trials Register: BNT162-01 results and protocol amendments</a></li>
+    <li><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-002641-42/DE">EU Clinical Trials Register: C4591001, EudraCT 2020-002641-42</a></li>
+    <li><a href="https://www.nature.com/articles/s41586-020-2814-7">Sahin et al., Nature (2020), BNT162b1 trial, methods incl. ethics committee</a></li>
+    <li><a href="https://www.courtlistener.com/docket/62995004/united-states-of-america-ex-rel-brooks-jackson-v-ventavia-research-group/">CourtListener: US ex rel. Jackson v. Ventavia, E.D. Tex. 1:21-cv-00008</a></li>
+    <li><a href="https://www.courtlistener.com/docket/69644437/jackson-v-ventavia-research-group/">CourtListener: Jackson v. Ventavia, Fifth Circuit 24-40564</a></li>
+    <li><a href="https://caselaw.findlaw.com/court/us-dis-crt-e-d-tex-bea-div/116482929.html">FindLaw: E.D. Tex. opinion, 31 March 2023</a></li>
+    <li><a href="https://www.aerzteblatt.de/news/paul-ehrlich-institut-gibt-informationen-ueber-angeblich-verunreinigte-mrna-impfstoffe-d91babd4-1bd0-4784-8c41-13d856deb052">Ärzteblatt: PEI on alleged DNA contamination (Dec 2023)</a></li>
+    <li><a href="https://correctiv.org/faktencheck/2024/02/29/angebliche-belege-zu-dna-verunreinigungen-in-mrna-impfstoffen-gegen-covid-19-wissenschaftlich-nicht-haltbar/">Correctiv: alleged DNA contamination claims (29 Feb 2024)</a></li>
+    <li><a href="https://www.pharmazeutische-zeitung.de/grenzwert-fuer-rest-dna-wird-eingehalten-145346">Pharmazeutische Zeitung: residual DNA limit is met</a></li>
+    <li><a href="https://imahealth.org/research/quantification-of-residual-plasmid-dna-and-sv40-promoter-enhancer-sequences-in-pfizer-biontech-and-moderna-modrna-covid-19-vaccines-from-ontario-canada/">Speicher, Rose &amp; McKernan, Autoimmunity 58(1), 2025 (summary)</a></li>
+    <li><a href="https://www.thecanadianpressnews.ca/fact_checking/health-canada-statement-on-dna-in-covid-19-vaccines-misrepresented-online/article_c0bd8391-4ca6-54bf-905a-e0c105f666f3.html">Canadian Press: Health Canada statement on DNA in COVID-19 vaccines</a></li>
+    <li><a href="https://www.factcheck.org/2023/11/scicheck-posts-falsely-claim-fda-required-to-take-mrna-covid-19-vaccines-off-market-due-to-adulteration/">FactCheck.org: SV40 and residual DNA claims (Nov 2023)</a></li>
+    <li><a href="https://portal.research.lu.se/en/publications/intracellular-reverse-transcription-of-pfizer-biontech-covid-19-m/">Aldén et al., CIMB 44(3), 2022 (Lund University)</a></li>
+    <li><a href="https://doi.org/10.3390/cimb44040113">Merchant, comment on Aldén et al., CIMB 44(4), 2022</a></li>
+    <li><a href="https://www.sec.gov/Archives/edgar/data/1776985/000119312519241112/d635330df1.htm">SEC: BioNTech F-1 registration statement (2019)</a></li>
+    <li><a href="https://www.sec.gov/Archives/edgar/data/1776985/000119312520196544/d69204dfwp.htm">SEC: BioNTech free-writing prospectus, July 2020 offering</a></li>
+    <li><a href="https://www.lobbyregister.bundestag.de/suche/R003422">Lobbyregister: BlackRock Asset Management Deutschland AG (R003422)</a></li>
+    <li><a href="https://dserver.bundestag.de/btd/21/078/2107864.pdf">Bundestag document 21/7864: Frühstart-Rente bill (7 Sep 2026)</a></li>
+    <li><a href="https://correctiv.org/faktencheck/2024/12/04/video-ueber-blackrock-stammt-nicht-von-friedrich-merz-sohn/">Correctiv: BlackRock video not from Merz's son (4 Dec 2024)</a></li>
+    <li><a href="https://correctiv.org/faktencheck/2026/08/28/ein-bild-belegt-kein-treffen-von-merz-und-epstein-bei-blackrock/">Correctiv: image proves no Merz–Epstein meeting at BlackRock (28 Aug 2026)</a></li>
+    <li><a href="https://docserv.uni-duesseldorf.de/servlets/DerivateServlet/Derivate-54600/Diss%20Sylvia%20Wagner-1.pdf">Sylvia Wagner, dissertation, HHU Düsseldorf (2019)</a></li>
+    <li><a href="https://www.aerzteblatt.de/news/ddr-arzneimittelforschung-fuer-den-westen-ein-skandal-der-keiner-war-151d4581-2ccd-446f-8672-85e134fb509f">Ärzteblatt: GDR drug research for the West (Charité study, 2016)</a></li>
+  </ol>
+</section>
+
+<footer class="label">Evidence Chain · Special Edition No. 1 · Part II · Built from a follow-up research review of the Project Evidence Chain gaps. Grades describe the evidence found, not the probability that nothing undisclosed ever happened.</footer>
+</main>
+
+</body>
+</html>
